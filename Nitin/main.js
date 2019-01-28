@@ -25,15 +25,27 @@ mongoose.connect(url)
             user.save();
         });
 
-    
- 
+        app.post(alias + '/updateUser',(req,res)=>{
+            var tempexpoToken=req.body.expoToken;
+            var tempsub=req.body.sub;
+            var tempbatch=req.body.batch;
+            var tempyear=req.body.year;
+            var tempclass=req.body.class;
+            var tempId=req.body.Id;
+          
+         
+         var user= new User({expoToken:tempexpoToken,sub:tempsub,batch:tempbatch,year:tempyear,class:tempclass,Id:tempId});
+         var upsertData = user.toObject();   
+         delete upsertData._id;
+         User.update({expoToken:tempexpoToken}, upsertData, {upsert: true}, function(err, doc){
+            if (err) return res.send(500, { error: err });
+            return res.send("succesfully saved");
+        });
 
-
-    
-    }
+    });
 
 
 
    
 
-
+}
