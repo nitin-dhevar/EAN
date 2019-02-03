@@ -1,8 +1,10 @@
 const mongoose = require('mongoose');
 const date1 = require('date-and-time');
+//if same notice is to be sent to multiple classes or branches or batches just include array in batch,class and branch
+//if facing difficuly just include options of batches for a particular branch and particular class 
 var noticeSchema = new mongoose.Schema({
     Id:{
-        type:Number,
+        type:String,
         unique:true
     },
     title:{
@@ -22,18 +24,18 @@ var noticeSchema = new mongoose.Schema({
         type:String
     },
     tid:{
-        type:Number,
+        type:String,
         required:true
     },
     tname:{
         type:String
     },
     validity:{
-        type:Date,
+        type:String,
         required:true
     },
-    validdays:{
-        type:Number
+    general:{
+        type:Boolean
     },
     branch:{
         type:String,
@@ -42,11 +44,9 @@ var noticeSchema = new mongoose.Schema({
         type:String,
     },
     batch:{
-        type:Number,
+        type:String,
     },
-    general:{
-        type:Boolean
-    },
+
     category:{
         type:String
     }
@@ -57,6 +57,6 @@ var noticeSchema = new mongoose.Schema({
 
 
 
-var notice = new mongoose.model('Notice',noticeSchema);
+var Notice = new mongoose.model('Notice',noticeSchema);
 
-module.exports = { notice };
+module.exports = { Notice };
