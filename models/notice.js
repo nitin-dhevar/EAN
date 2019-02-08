@@ -37,11 +37,12 @@ var noticeSchema = new mongoose.Schema({
     general:{
         type:Boolean
     },
-    branch:{
+    branch:[String],
+    year:{
         type:String,
     },
-    class:{
-        type:String,
+    div:{
+        type:String
     },
     batch:{
         type:String,
