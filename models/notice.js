@@ -3,10 +3,6 @@ const date1 = require('date-and-time');
 //if same notice is to be sent to multiple classes or branches or batches just include array in batch,class and branch
 //if facing difficuly just include options of batches for a particular branch and particular class 
 var noticeSchema = new mongoose.Schema({
-    Id:{
-        type:String,
-        unique:true
-    },
     title:{
         type:String,
         required:true,
@@ -19,6 +15,9 @@ var noticeSchema = new mongoose.Schema({
     },
     timestamp:{
         type:String,
+    },
+    date1:{
+        type:String
     },
     filelink:{
         type:String
@@ -34,20 +33,11 @@ var noticeSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-    general:{
-        type:Boolean
-    },
-    branch:[String],
-    year:{
+    batches:[String],
+    scope:{
         type:String,
+        required:true
     },
-    div:{
-        type:String
-    },
-    batch:{
-        type:String,
-    },
-
     category:{
         type:String
     }
