@@ -11,3 +11,6 @@ else{
     console.log("false");
     
 }
+
+var t1 = "I am a good person"
+console.log(t1.split(" ").join(''));
