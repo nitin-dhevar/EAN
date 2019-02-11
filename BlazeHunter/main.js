@@ -14,7 +14,7 @@ const storage = multer.diskStorage({
         cb(null,'public/files');
     },
     filename:function(req,file,cb){
-        cb(null,new Date().toISOString()+"-"+file.originalname.split(" ").join(''));
+        cb(null,new Date().toISOString()+"-"+file.originalname.split(" ").join('_'));
     }
 });
 
@@ -73,7 +73,7 @@ module.exports = function(app){
                 tbody:doc.tbody,
                 date1:doc.date1
             }
-            sendNoticeToUser(notice);
+            //sendNoticeToUser(notice);
             console.log(validdata);
         },(err)=>{
             console.log(err);
