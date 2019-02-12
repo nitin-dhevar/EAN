@@ -15,14 +15,17 @@ mongoose.connect(url)
        app.post(alias + '/addUser',(req,res)=>{
            var tempexpoToken=req.body.expoToken;
            var tempsub=req.body.sub;
-           var tempdept=req.body.dept;
+           var tempbranch=req.body.branch;
            var tempbatch=req.body.batch;
            var tempyear=req.body.year;
-           var tempclass=req.body.class;
-           var tempId=req.body.Id;
+           var tempdivision=req.body.division;
+           var tempregId=req.body.regId;
+           var tempfName=req.body.fName;
+           var templName=req.body.lName;
+           var tempemail=req.body.email;
          
         
-        var user= new User({expoToken:tempexpoToken,dept:tempdept,sub:tempsub,batch:tempbatch,year:tempyear,class:tempclass,Id:tempId});
+        var user= new User({expoToken:tempexpoToken,branch:tempbranch,sub:tempsub,batch:tempbatch,year:tempyear,division:tempdivision,fName:tempfName,email:tempemail,lName:templName,regId:tempregId});
             user.save();
         });
 
