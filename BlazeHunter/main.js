@@ -147,20 +147,21 @@ module.exports = function(app){
     //for sending push notification hierarchy is general,branch,class,batch
     function sendNoticeToUser(notice){
         (async () => {
-          tokens = []
-          User.find({},(error, users) => {
-                for (let user of users) {
-                   notice.batches.forEach((b)=>{
-                        if(user.batch==b){
-                            if(user.expoToken!=="null")
-                                tokens.push(user.expoToken);
-                        }
-                    })
-                  }
-                  console.log(tokens);
-                  expoN.sendNotifiaction(tokens,notice);
-            })
-          
+        //   tokens = []
+        //   User.find({},(error, users) => {
+        //         for (let user of users) {
+        //            notice.batches.forEach((b)=>{
+        //                 if(user.batch==b){
+        //                     if(user.expoToken!=="null")
+        //                         tokens.push(user.expoToken);
+        //                 }
+        //             })
+        //           }
+        //           console.log(tokens);
+        //           expoN.sendNotifiaction(tokens,notice);
+        //     })
+        tokens = ["Xgt987G-tFWDcWjftr5yWv"];
+            expoN.sendNotifiaction(tokens,notice);
         })();
       }
 }
