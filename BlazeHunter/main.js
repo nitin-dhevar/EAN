@@ -87,8 +87,14 @@ module.exports = function(app){
         console.log(req.body);
         
         Notice.find({batches:req.body.batch,category:req.body.category},{batches:0}).then((docs)=>{
+            var rev = [];
+            var i = docs.length-1;
+            while(i>-1){
+                rev.push(docs[i]);
+                i--;
+            }
             console.log(docs);
-            res.send(docs);
+            res.send(rev);
         },(err)=>{
             console.log(err);
             res.status(400).send();
@@ -101,8 +107,14 @@ module.exports = function(app){
         console.log(req.body);
         
         Notice.find({batches:req.body.batch,category:req.body.category},{batches:0}).then((docs)=>{
+            var rev = [];
+            var i = docs.length-1;
+            while(i>-1){
+                rev.push(docs[i]);
+                i--;
+            }
             console.log(docs);
-            res.send(docs);
+            res.send(rev);
         },(err)=>{
             console.log(err);
             res.status(400).send();
@@ -115,8 +127,14 @@ module.exports = function(app){
         console.log(req.body);
         
         Notice.find({batches:req.body.batch,category:req.body.category},{batches:0}).then((docs)=>{
+            var rev = [];
+            var i = docs.length-1;
+            while(i>-1){
+                rev.push(docs[i]);
+                i--;
+            }
             console.log(docs);
-            res.send(docs);
+            res.send(rev);
         },(err)=>{
             console.log(err);
             res.status(400).send();
