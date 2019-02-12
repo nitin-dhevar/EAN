@@ -75,7 +75,7 @@ module.exports = function(app){
                 tbody:doc.tbody,
                 date1:doc.date1
             }
-            //sendNoticeToUser(notice);
+            sendNoticeToUser(notice);
             console.log(validdata);
         },(err)=>{
             console.log(err);
