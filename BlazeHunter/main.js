@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const multer = require('multer');
 const _ = require('lodash');
 var time1 = require('time');
+const fs = require('fs');
 const expoN = require(process.cwd() + '/notify.js');
 //****************************************************************************************************************************************** */
 const {Notice} = require(process.cwd()+'/models/notice');
@@ -15,7 +16,24 @@ const storage = multer.diskStorage({
     },
     filename:function(req,file,cb){
         //cb(null,new Date().toISOString()+"-"+file.originalname.split(" ").join('_'));
-        cb(null,new Date().toISOString()+"-"+req.body.tname);
+        var  i = file.originalname.length-1;
+        console.log(i);
+        
+        var name = [];
+        while(file.originalname[i]!='.'){
+            name.push(file.originalname[i]);
+            i = i -1;
+            console.log(i);
+            
+        }
+        i = name.length-1;
+        var newname = "";
+        while(i>-1){
+            newname = newname + name[i];
+            i  = i-1;
+        }
+        newname = req.body.tname + "."+newname;
+        cb(null,new Date().toISOString()+"-"+newname);
 
     }
 });
