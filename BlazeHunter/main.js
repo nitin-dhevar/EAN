@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const multer = require('multer');
 const _ = require('lodash');
 var time1 = require('time');
-
+const expoN = require(process.cwd() + '/notify.js');
 //****************************************************************************************************************************************** */
 const {Notice} = require(process.cwd()+'/models/notice');
 //****************************************************************************************************************************************** */
@@ -127,20 +127,24 @@ module.exports = function(app){
     });
 
     //for sending push notification hierarchy is general,branch,class,batch
-    // function sendNoticeToUser(notice){
-    //     (async () => {
-    //       tokens = []
-    //       User.find({},(error, users) => {
-    //             for (let user of users) {
-    //                 if(notice.batches.forEach((b)=>{user.batch}))
-    //                 tokens.push(user.expoToken);
-    //               }
-    //               console.log(tokens);
-    //               expoN.sendNotifiaction(tokens,notice);
-    //         })
+    function sendNoticeToUser(notice){
+        (async () => {
+          tokens = []
+          User.find({},(error, users) => {
+                for (let user of users) {
+                   notice.batches.forEach((b)=>{
+                        if(user.batch==b){
+                            if(user.expoToken!=="null")
+                                tokens.push(user.expoToken);
+                        }
+                    })
+                  }
+                  console.log(tokens);
+                  expoN.sendNotifiaction(tokens,notice);
+            })
           
-    //     })();
-    //   }
+        })();
+      }
 }
 
 
