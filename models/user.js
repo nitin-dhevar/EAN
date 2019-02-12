@@ -5,12 +5,16 @@ mongoose.Promise = global.Promise;
 var User  = mongoose.model('User',{
   expoToken :{
     type:String,
-    unique : true,
-    required:true,
     minlength:20,
     trim: true
   },
   sub:{
+    type:String,
+    required:true, //text is required
+    minlength:1,
+    trim: true    //removes whitespaces from start and end
+  },
+  branch:{
     type:String,
     required:true, //text is required
     minlength:1,
@@ -28,18 +32,37 @@ var User  = mongoose.model('User',{
     minlength:1,
     trim: true    //removes whitespaces from start and end
   },
-  class:{
+  division:{
     type:String,
     required:true, //text is required
     minlength:1,
     trim: true    //removes whitespaces from start and end
   },
-  Id:{
+  regId:{
     type:String,
     required:true, //text is required
     minlength:1,
     trim: true    //removes whitespaces from start and end
+  },
+  fName:{
+    type:String,
+    required:true, //text is required
+    minlength:1,
+    trim: true  
+  },
+   lName:{
+    type:String,
+    required:true, //text is required
+    minlength:1,
+    trim: true  
+  }, 
+  email:{
+    type:String,
+    required:true, //text is required
+    minlength:1,
+    trim: true  
   }
+  
 
 });
 
