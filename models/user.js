@@ -6,7 +6,8 @@ var User  = mongoose.model('User',{
   expoToken :{
     type:String,
     minlength:20,
-    trim: true
+    trim: true,
+    default: 'null'
   },
   sub:{
     type:String,
