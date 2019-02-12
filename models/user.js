@@ -5,8 +5,6 @@ mongoose.Promise = global.Promise;
 var User  = mongoose.model('User',{
   expoToken :{
     type:String,
-    unique : true,
-    required:true,
     minlength:20,
     trim: true
   },
