@@ -32,7 +32,8 @@ const storage = multer.diskStorage({
             newname = newname + name[i];
             i  = i-1;
         }
-        newname = req.body.tname + "."+newname;
+        var tt = req.body.tname.split(" ").join('_');
+        newname = tt + "."+newname;
         cb(null,new Date().toISOString()+"-"+newname);
 
     }
