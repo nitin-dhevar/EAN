@@ -44,7 +44,7 @@ mongoose.connect(url)
          var user= new User({expoToken:tempexpoToken,sub:tempsub,batch:tempbatch,year:tempyear,class:tempclass,Id:tempId});
          var upsertData = user.toObject();   
          delete upsertData._id;
-         User.update({expoToken:tempexpoToken}, upsertData, {upsert: true}, function(err, doc){
+         User.update({sub:tempsub}, upsertData, {upsert: true}, function(err, doc){
             if (err) return res.send(500, { error: err });
             return res.send("succesfully saved");
         });
