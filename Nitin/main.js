@@ -27,6 +27,9 @@ mongoose.connect(url)
         
         var user= new User({expoToken:tempexpoToken,branch:tempbranch,sub:tempsub,batch:tempbatch,year:tempyear,division:tempdivision,fName:tempfName,email:tempemail,lName:templName,regId:tempregId});
             user.save();
+           
+            if (err) return res.send(500, { error: err });
+            return res.send("Success");
         });
 
         app.post(alias + '/updateUser',(req,res)=>{
