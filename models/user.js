@@ -5,7 +5,7 @@ mongoose.Promise = global.Promise;
 var User  = mongoose.model('User',{
   expoToken :{
     type:String,
-    minlength:20,
+    minlength:1,
     trim: true,
     default: 'null'
   },
@@ -13,6 +13,7 @@ var User  = mongoose.model('User',{
     type:String,
     required:true, //text is required
     minlength:1,
+    unique:true,
     trim: true    //removes whitespaces from start and end
   },
   branch:{
