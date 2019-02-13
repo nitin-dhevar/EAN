@@ -23,10 +23,12 @@ mongoose.connect(url)
            var tempfName=req.body.fName;
            var templName=req.body.lName;
            var tempemail=req.body.email;
+           let status="Success";
          
         
         var user= new User({expoToken:tempexpoToken,branch:tempbranch,sub:tempsub,batch:tempbatch,year:tempyear,division:tempdivision,fName:tempfName,email:tempemail,lName:templName,regId:tempregId});
             user.save();
+            res.send(status);
         });
 
         app.post(alias + '/updateUser',(req,res)=>{
