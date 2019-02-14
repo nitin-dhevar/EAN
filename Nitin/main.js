@@ -59,8 +59,8 @@ mongoose.connect(url)
            var tempsub=req.body.sub;
             async function getUsers(tempsub){
                 const user=await User.find({ sub: tempsub }, function (err, data) {});
-                console.log(user);
-                res.send(user);
+               console.log(user[0]);
+                res.json(user[0]);
             }
             getUsers(tempsub);
         
