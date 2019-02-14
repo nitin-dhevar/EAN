@@ -2,6 +2,7 @@ const mongoose =require('mongoose');
 var mongodb = require('mongodb');
 const { User}  = require(process.cwd() + '/models/user');
 const bodyParser = require('body-parser');
+var request = require('request');
 var alias = '/nd';
 module.exports = function(app){
 
@@ -53,6 +54,17 @@ mongoose.connect(url)
         });
 
     });
+    
+    app.post(alias + '/getDetails', (req, res) => {
+           var tempsub=req.body.sub;
+            async function getUsers(tempsub){
+                const user=await User.find({ sub: tempsub }, function (err, data) {});
+                console.log(user);
+                res.send(user);
+            }
+            getUsers(tempsub);
+        
+        });
 
 
 
