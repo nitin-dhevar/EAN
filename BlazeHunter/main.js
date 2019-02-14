@@ -55,7 +55,7 @@ function validate(req){
     })
 
     if(req.file == undefined)
-        data.filelink = "default";
+        data.filelink = "public/files/sample.webp";
     else
         data.filelink = req.file.path;
 
