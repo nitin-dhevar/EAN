@@ -45,7 +45,7 @@ mongoose.connect(url)
             var tempemail=req.body.email;
             
             if(tempbranch=== ""||tempbatch=== ""||tempyear=== ""||tempdivision=== "")
-                return res.send("Error:Fields cannot be empty!");
+                return res.send("Error: Fields cannot be Empty!");
           
      
             User.update({sub:tempsub}, {$set: { expoToken:tempexpoToken,branch:tempbranch,sub:tempsub,batch:tempbatch,year:tempyear,division:tempdivision,fName:tempfName,email:tempemail,lName:templName,regId:tempregId }}, {upsert: true}, function(err){res.send("succesfully saved");})
