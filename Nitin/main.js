@@ -44,16 +44,9 @@ mongoose.connect(url)
             var templName=req.body.lName;
             var tempemail=req.body.email;
           
-         
-         var user= new User({expoToken:tempexpoToken,sub:tempsub,batch:tempbatch,year:tempyear,class:tempclass,Id:tempId});
-         var upsertData = user.toObject();   
-         delete upsertData._id;
-         User.update({sub:tempsub}, upsertData, {upsert: true}, function(err, doc){
-            if (err) return res.send(500, { error: err });
-            return res.send("succesfully saved");
-        });
-
-    });
+     
+            User.update({sub:tempsub}, {$set: { expoToken:tempexpoToken,branch:tempbranch,sub:tempsub,batch:tempbatch,year:tempyear,division:tempdivision,fName:tempfName,email:tempemail,lName:templName,regId:tempregId }}, {upsert: true}, function(err){res.send("succesfully saved");})
+                                                                                        });
     
     app.post(alias + '/getDetails', (req, res) => {
            var tempsub=req.body.sub;
