@@ -20,7 +20,7 @@ function createJWT(data){
   var token = jwt.sign({
      data: data
    }, key, {
-      expiresIn: 30,
+      expiresIn: "30d",
       algorithm: 'HS256'
   });
   return token;
