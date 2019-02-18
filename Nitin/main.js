@@ -4,7 +4,7 @@ const { User}  = require(process.cwd() + '/models/user');
 const bodyParser = require('body-parser');
 var request = require('request');
 var alias = '/nd';
-module.exports = function(app){
+module.exports = function(app, router){
 
 var url="mongodb://dbuser:dbuser1@ds161245.mlab.com:61245/assignment_db";
 
