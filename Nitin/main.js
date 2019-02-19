@@ -1,6 +1,7 @@
 const mongoose =require('mongoose');
 var mongodb = require('mongodb');
 const { User}  = require(process.cwd() + '/models/user');
+const { vUser}  = require(process.cwd() + '/models/upload');
 const bodyParser = require('body-parser');
 var request = require('request');
 var alias = '/nd';
@@ -61,6 +62,26 @@ mongoose.connect(url)
             getUsers(tempsub);
         
         });
+    
+    app.post(alias + '/verifyUser', (req, res) => {
+            var tempRegId=req.body.regId;
+             async function verifyUser(tempRegId){
+                 const user=await vUser.find({ enrollmentNo: tempRegId }, function (err, data) {});
+                 console.log(user);
+                 if(user.length===0)
+                 res.json("Error: RegId does not exist!");
+                 res.json(user);
+             }
+             async function getUsers(tempRegId){
+                const user=await User.find({ regId: tempRegId }, function (err, data) {});
+                console.log(user.length);
+                res.json(user.length);
+            }
+             //getUsers(tempRegId);
+             verifyUser(tempRegId);
+         
+         });
+
 
 
 
