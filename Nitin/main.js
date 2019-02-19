@@ -69,16 +69,20 @@ mongoose.connect(url)
                  const user=await vUser.find({ enrollmentNo: tempRegId }, function (err, data) {});
                  console.log(user);
                  if(user.length===0)
-                 res.json("Error: RegId does not exist!");
-                 res.json(user);
+                 res.status(404).end();
+                 else{
+                     res.json(user);
+                 }
              }
              async function getUsers(tempRegId){
                 const user=await User.find({ regId: tempRegId }, function (err, data) {});
-                console.log(user.length);
-                res.json(user.length);
+                console.log(user);
+                res.json(user);
             }
-             //getUsers(tempRegId);
-             verifyUser(tempRegId);
+             
+             var dataVerifySource=verifyUser(tempRegId);
+             //console.log(dataVerifySource);
+            // var dataToverify=getUsers(tempRegId);
          
          });
 
