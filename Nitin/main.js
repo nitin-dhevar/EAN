@@ -1,10 +1,11 @@
 const mongoose =require('mongoose');
 var mongodb = require('mongodb');
 const { User}  = require(process.cwd() + '/models/user');
+const { vUser}  = require(process.cwd() + '/models/upload');
 const bodyParser = require('body-parser');
 var request = require('request');
 var alias = '/nd';
-module.exports = function(app){
+module.exports = function(app, router){
 
 var url="mongodb://dbuser:dbuser1@ds161245.mlab.com:61245/assignment_db";
 
@@ -61,6 +62,30 @@ mongoose.connect(url)
             getUsers(tempsub);
         
         });
+    
+    app.post(alias + '/verifyUser', (req, res) => {
+            var tempRegId=req.body.regId;
+             async function verifyUser(tempRegId){
+                 const user=await vUser.find({ enrollmentNo: tempRegId }, function (err, data) {});
+                 console.log(user);
+                 if(user.length===0)
+                 res.status(404).end();
+                 else{
+                     res.json(user);
+                 }
+             }
+             async function getUsers(tempRegId){
+                const user=await User.find({ regId: tempRegId }, function (err, data) {});
+                console.log(user);
+                res.json(user);
+            }
+             
+             var dataVerifySource=verifyUser(tempRegId);
+             //console.log(dataVerifySource);
+            // var dataToverify=getUsers(tempRegId);
+         
+         });
+
 
 
 

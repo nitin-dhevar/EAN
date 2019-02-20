@@ -64,7 +64,7 @@ function validate(req){
 //****************************************************************************************************************************************** */
 //API's
 //scheduling remove notice after every 24 hours
-module.exports = function(app){
+module.exports = function(app, router){
 
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));
