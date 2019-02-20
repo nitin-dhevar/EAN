@@ -17,7 +17,7 @@ var noticeSchema = new mongoose.Schema({
         type:String,
     },
     date1:{
-        type:String
+        type:Date
     },
     filelink:{
         type:String

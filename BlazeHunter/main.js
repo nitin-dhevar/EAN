@@ -45,14 +45,6 @@ function validate(req){
     var data=_.pick(req.body,['title','nbody','tname','tid','validity','scope','category']);
 
     data.category = data.category.toLowerCase();
-    
-    data.timestamp = new Date().toLocaleString('en-US', {
-        timeZone: 'Asia/Calcutta'
-      });
-    
-    data.date1  = new Date().toLocaleDateString('en-Us',{
-        timeZone:'Asia/Calcutta'
-    })
 
     if(req.file == undefined)
         data.filelink = "public/files/sample.webp";
@@ -85,6 +77,15 @@ module.exports = function(app, router){
         for(let i of s1){
             newnotice.batches.push(i);
         }
+        // newnotice.date1  = new Date().toLocaleDateString('en-Us',{
+        //     timeZone:'Asia/Calcutta'
+        // })
+        newnotice.date1 = new Date();
+        newnotice.timestamp = new Date().toLocaleString('en-US', {
+            timeZone: 'Asia/Calcutta'
+          });
+        
+      
 
         newnotice.save().then((doc)=>{
             res.send(doc);
@@ -102,18 +103,24 @@ module.exports = function(app, router){
         });        
     });
 
-    app.post(alias + '/getnotices',(req,res)=>{
+    app.post(alias + '/getnotices', (req,res)=>{
         console.log(req.body);
         
-        Notice.find({batches:req.body.batch,category:req.body.category},{batches:0}).then((docs)=>{
-            var rev = [];
-            var i = docs.length-1;
-            while(i>-1){
-                rev.push(docs[i]);
-                i--;
-            }
-            console.log(docs);
-            res.send(rev);
+        Notice.find({batches:req.body.batch,category:req.body.category},{batches:0}).sort({date1:-1}).then(async (docs)=>{
+            // var rev = [];
+            // var i = docs.length-1;
+            // while(i>-1){
+            //     rev.push(docs[i]);
+            //     i--;
+            // }
+            // console.log(docs);
+            // res.send(rev);
+            // await docs.sort(function(a,b){
+            //     var c = new Date(a.date1);
+            //     var d = new Date(b.date1);
+            //     return c-d;
+            // })
+            res.send(docs);
         },(err)=>{
             console.log(err);
             res.status(400).send();
