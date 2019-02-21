@@ -15,25 +15,10 @@ const storage = multer.diskStorage({
         cb(null,'public/files');
     },
     filename:function(req,file,cb){
-        //cb(null,new Date().toISOString()+"-"+file.originalname.split(" ").join('_'));
         var  i = file.originalname.length-1;
-        //console.log(i);
-        
-        var name = [];
-        while(file.originalname[i]!='.'){
-            name.push(file.originalname[i]);
-            i = i -1;
-            //console.log(i);
-            
-        }
-        i = name.length-1;
-        var newname = "";
-        while(i>-1){
-            newname = newname + name[i];
-            i  = i-1;
-        }
+        let n1 = file.originalname.split('.');
         var tt = req.body.tname.split(" ").join('_');
-        newname = tt + "."+newname;
+        newname = tt + "."+n1[n1.length-1];
         cb(null,new Date().toISOString()+"-"+newname);
 
     }
@@ -95,7 +80,7 @@ module.exports = function(app, router){
                 tbody:doc.tbody,
                 date1:doc.date1
             }
-            //sendNoticeToUser(notice);
+            sendNoticeToUser(notice);
             console.log(validdata);
         },(err)=>{
             console.log(err);
@@ -171,25 +156,25 @@ module.exports = function(app, router){
     });
 
     //for sending push notification hierarchy is general,branch,class,batch
-    // function sendNoticeToUser(notice){
-    //     (async () => {
-    //     //   tokens = []
-    //     //   User.find({},(error, users) => {
-    //     //         for (let user of users) {
-    //     //            notice.batches.forEach((b)=>{
-    //     //                 if(user.batch==b){
-    //     //                     if(user.expoToken!=="null")
-    //     //                         tokens.push(user.expoToken);
-    //     //                 }
-    //     //             })
-    //     //           }
-    //     //           console.log(tokens);
-    //     //           expoN.sendNotifiaction(tokens,notice);
-    //     //     })
-    //     tokens = ["Xgt987G-tFWDcWjftr5yWv"];
-    //         expoN.sendNotifiaction(tokens,notice);
-    //     })();
-    //   }
+    function sendNoticeToUser(notice){
+        (async () => {
+          tokens = []
+          User.find({},(error, users) => {
+                for (let user of users) {
+                   notice.batches.forEach((b)=>{
+                        if(user.batch==b){
+                            if(user.expoToken!=="null")
+                                tokens.push(user.expoToken);
+                        }
+                    })
+                  }
+                  console.log(tokens);
+                  expoN.sendNotifiaction(tokens,notice);
+            })
+        //tokens = ["Xgt987G-tFWDcWjftr5yWv"];
+            expoN.sendNotifiaction(tokens,notice);
+        })();
+      }
 }
 
 
