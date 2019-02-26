@@ -50,7 +50,7 @@ mongoose.connect(url)
           
      
             User.update({sub:tempsub}, {$set: { expoToken:tempexpoToken,branch:tempbranch,sub:tempsub,batch:tempbatch,year:tempyear,division:tempdivision,fName:tempfName,email:tempemail,lName:templName,regId:tempregId }}, {upsert: true}, function(err){res.send("succesfully saved");})
-                                                                                        });
+        });
     
     app.post(alias + '/getDetails', (req, res) => {
            var tempsub=req.body.sub;
@@ -136,27 +136,22 @@ mongoose.connect(url)
           
      
             User.update({regId:tempregId}, {$set: { expoToken:tempexpoToken,branch:tempbranch,sub:tempsub,batch:tempbatch,year:tempyear,division:tempdivision,fName:tempfName,email:tempemail,lName:templName,regId:tempregId }}, {upsert: true}, function(err){res.send("succesfully saved");})
-                                                                                        });
-    
-     app.delete(alias + '/deleteUser', (req, res) => {
-           var tempregId=req.body.regId;
-            async function getUsers(tempregId){
-               await User.deleteOne({regId: tempregId }, function (err, data) {if (err) {
-
-            console.log("error query");
-
-        } else {
-
-            console.log(result);
-              
-            }
-            getUsers(tempregId);
-        
         });
     
+//      app.delete(alias + '/deleteUser', (req, res) => {
+//            var tempregId=req.body.regId;
+//             async function getUsers(tempregId){
+//                await User.deleteOne({regId: tempregId }, function (err, data) {if (err) {
 
+//             console.log("error query");
 
+//         } else {
 
-   
-
+//             console.log(result);
+              
+//             }
+//             getUsers(tempregId);
+//         }
+//     }
+// });
 }
