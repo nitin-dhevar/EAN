@@ -4,7 +4,6 @@ const {mongoose} = require('./mongooseconnect');
 const bodyParser = require('body-parser');
 const multer = require('multer');
 const _ = require('lodash');
-var time1 = require('time');
 const fs = require('fs');
 const expoN = require(process.cwd() + '/notify.js');
 //****************************************************************************************************************************************** */
@@ -15,7 +14,6 @@ const storage = multer.diskStorage({
         cb(null,'public/files');
     },
     filename:function(req,file,cb){
-        var  i = file.originalname.length-1;
         let n1 = file.originalname.split('.');
         var tt = req.body.tname.split(" ").join('_');
         newname = tt + "."+n1[n1.length-1];
@@ -42,7 +40,7 @@ function validate(req){
 //API's
 //scheduling remove notice after every 24 hours
 module.exports = function(app, router){
-
+    const admin = require('./admin')(app,mongoose);
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use('/public',express.static('public'));
@@ -92,19 +90,6 @@ module.exports = function(app, router){
         console.log(req.body);
         
         Notice.find({batches:req.body.batch,category:req.body.category},{batches:0}).sort({date1:-1}).then(async (docs)=>{
-            // var rev = [];
-            // var i = docs.length-1;
-            // while(i>-1){
-            //     rev.push(docs[i]);
-            //     i--;
-            // }
-            // console.log(docs);
-            // res.send(rev);
-            // await docs.sort(function(a,b){
-            //     var c = new Date(a.date1);
-            //     var d = new Date(b.date1);
-            //     return c-d;
-            // })
             res.send(docs);
         },(err)=>{
             console.log(err);
@@ -155,7 +140,6 @@ module.exports = function(app, router){
 
     });
 
-    //for sending push notification hierarchy is general,branch,class,batch
     function sendNoticeToUser(notice){
         (async () => {
           tokens = []
@@ -164,7 +148,7 @@ module.exports = function(app, router){
                    notice.batches.forEach((b)=>{
                         if(user.batch==b){
                             if(user.expoToken!=="null")
-                                tokens.push(user.expoToken);
+                                tokens.push(user.expoToken.substring());
                         }
                     })
                   }
