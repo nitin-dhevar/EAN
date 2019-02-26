@@ -147,7 +147,7 @@ mongoose.connect(url)
 
         } else {
 
-            console.log(result);});
+            console.log(result);
               
             }
             getUsers(tempregId);
