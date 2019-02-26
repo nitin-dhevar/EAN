@@ -32,6 +32,8 @@ module.exports = function(app,mongoose){
             
         }).catch((err)=>{
             console.log("Error Delete");
+            console.log(err);
+            
             res.status(400).send();
             
         });
