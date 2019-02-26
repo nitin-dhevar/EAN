@@ -1,4 +1,3 @@
-const _ = require('lodash');
 const bodyParser = require('body-parser');
 const {Notice} = require(process.cwd()+'/models/notice');
 const alias = '/bh';
