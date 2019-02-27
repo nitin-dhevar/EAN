@@ -88,38 +88,19 @@ mongoose.connect(url)
 
     
     
-    app.get(alias + '/getDetails', (req, res) => {
-           var tempregId=req.body.regId;
-            async function getUsers(tempregId){
-                const user=await User.find({regId: tempregId }, function (err, data) {});
-               console.log(user);
-                res.json(user);
-            }
-            getUsers(tempregId);
-        
-        });
-    
-    
-     app.post(alias + '/addUser',(req,res)=>{
-           var tempexpoToken=req.body.expoToken;
-           var tempsub=req.body.sub;
-           var tempbranch=req.body.branch;
-           var tempbatch=req.body.batch;
-           var tempyear=req.body.year;
-           var tempdivision=req.body.division;
-           var tempregId=req.body.regId;
-           var tempfName=req.body.fName;
-           var templName=req.body.lName;
-           var tempemail=req.body.email;
-           let status="Success";
+   pp.post(alias + '/getUsers', (req, res) => {
+            var tempregId=req.body.regId;
+             async function getUsers(tempregId){
+                 const user=await User.find({regId: tempregId }, function (err, data) {});
+                console.log(user);
+                 res.json(user);
+             }
+             getUsers(tempregId);
          
-        
-        var user= new User({expoToken:tempexpoToken,branch:tempbranch,sub:tempsub,batch:tempbatch,year:tempyear,division:tempdivision,fName:tempfName,email:tempemail,lName:templName,regId:tempregId});
-            user.save();
-            res.send(status);
-        });
-    
-     app.put(alias + '/updateUser',(req,res)=>{
+         });
+     
+     
+      app.post(alias + '/addUser',(req,res)=>{
             var tempexpoToken=req.body.expoToken;
             var tempsub=req.body.sub;
             var tempbranch=req.body.branch;
@@ -130,28 +111,39 @@ mongoose.connect(url)
             var tempfName=req.body.fName;
             var templName=req.body.lName;
             var tempemail=req.body.email;
-            
-            if(tempbranch=== ""||tempbatch=== ""||tempyear=== ""||tempdivision=== "")
-                return res.send("Error: Fields cannot be Empty!");
+            let status="Success";
           
+         
+         var user= new User({expoToken:tempexpoToken,branch:tempbranch,sub:tempsub,batch:tempbatch,year:tempyear,division:tempdivision,fName:tempfName,email:tempemail,lName:templName,regId:tempregId});
+             user.save();
+             res.send(status);
+         });
      
-            User.update({regId:tempregId}, {$set: { expoToken:tempexpoToken,branch:tempbranch,sub:tempsub,batch:tempbatch,year:tempyear,division:tempdivision,fName:tempfName,email:tempemail,lName:templName,regId:tempregId }}, {upsert: true}, function(err){res.send("succesfully saved");})
-        });
-    
-//      app.delete(alias + '/deleteUser', (req, res) => {
-//            var tempregId=req.body.regId;
-//             async function getUsers(tempregId){
-//                await User.deleteOne({regId: tempregId }, function (err, data) {if (err) {
-
-//             console.log("error query");
-
-//         } else {
-
-//             console.log(result);
-              
-//             }
-//             getUsers(tempregId);
-//         }
-//     }
-// });
+      app.put(alias + '/updateUser',(req,res)=>{
+             var tempexpoToken=req.body.expoToken;
+             var tempsub=req.body.sub;
+             var tempbranch=req.body.branch;
+             var tempbatch=req.body.batch;
+             var tempyear=req.body.year;
+             var tempdivision=req.body.division;
+             var tempregId=req.body.regId;
+             var tempfName=req.body.fName;
+             var templName=req.body.lName;
+             var tempemail=req.body.email;
+             
+             if(tempbranch=== ""||tempbatch=== ""||tempyear=== ""||tempdivision=== "")
+                 return res.json("Error: Fields cannot be Empty!");
+           
+      
+             User.update({regId:tempregId}, {$set: { expoToken:tempexpoToken,branch:tempbranch,sub:tempsub,batch:tempbatch,year:tempyear,division:tempdivision,fName:tempfName,email:tempemail,lName:templName,regId:tempregId }}, {upsert: true}, function(err){res.json("succesfully saved");})
+         });
+     
+              app.delete(alias + '/deleteUser', (req, res) => {
+           var tempregId=req.body.regId;
+            async function getUsers(tempregId){
+               await User.deleteOne({regId: tempregId }, function (err, data) {})
+            } 
+            getUsers(tempregId);
+            res.json("Deleted!");
+});
 }
