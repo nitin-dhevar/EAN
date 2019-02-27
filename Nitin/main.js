@@ -88,7 +88,7 @@ mongoose.connect(url)
 
     
     
-   pp.post(alias + '/getUsers', (req, res) => {
+   app.post(alias + '/getUsers', (req, res) => {
             var tempregId=req.body.regId;
              async function getUsers(tempregId){
                  const user=await User.find({regId: tempregId }, function (err, data) {});
