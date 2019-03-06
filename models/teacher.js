@@ -3,11 +3,6 @@ var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 var Teacher  = mongoose.model('Teacher',{
-  expoToken :{
-    type:String,
-    trim: true,
-    default: 'null'
-  },
   sub:{
     type:String,
     unique:true,
