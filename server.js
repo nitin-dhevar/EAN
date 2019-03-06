@@ -1,6 +1,6 @@
 const express = require('express');
 const jwt = require('./Auth');
-port = process.env.PORT || 3000 ;
+port = process.env.PORT || 3001 ;
 // var checkPost = [];
 var app = express();
 var router = express.Router();
@@ -14,7 +14,7 @@ router.use(function (req, res, next) {
       .then((decodedToken) =>
       {
         var dateNow = new Date();
-  
+
         // if(decodedToken.exp < dateNow.getTime()/1000)
         //   {
         //     res.status(401)
@@ -26,14 +26,14 @@ router.use(function (req, res, next) {
         //   }
           res.locals.userid = decodedToken.data;
           next()
-  
+
       })
       .catch((err) =>
       {
         res.status(400)
           .json({message: "Invalid auth token provided."})
       })
-  
+
   })
 app.set('view engine', 'hbs');
 app.get('/', function (req, res) {
@@ -43,14 +43,14 @@ app.get("/getToken" , (req,res) => {
     var data = "amey"
     var token = jwt.createJWT(data)
     res.send(token)
-  
+
   });
 require('./CraftyClown/main')(app, router);
 require('./Nitin/main')(app, router);
 require('./BlazeHunter/main')(app, router);
 router.get("/check", (req,res) => {
     res.send("hello , " + res.locals.userid)
-  
+
   });
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
