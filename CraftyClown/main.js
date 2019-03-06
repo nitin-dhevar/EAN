@@ -10,7 +10,7 @@ module.exports = function(app, router){
 
     app.get('/cc/checkPassword', (req,res) => {
       var hash = crypto.createHash('sha256')
-        hash.update('hello', 'utf-8' ).digest('hex'))
+        hash.update('hello', 'utf-8' ).digest('hex')
     });
 
 }

@@ -2,9 +2,10 @@ const express = require('express');
 const jwt = require('./Auth');
 port = process.env.PORT || 3001 ;
 // var checkPost = [];
+const bodyParser = require('body-parser');
 var app = express();
 var router = express.Router();
-
+var mpg = "asdlkj"
 var cors = require('cors');
 var hbs  = require('hbs');
 app.use(cors());
@@ -39,6 +40,17 @@ app.set('view engine', 'hbs');
 app.get('/', function (req, res) {
     res.render('maintenance');
 });
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.post('/checkMasterPasswd', (req, res) => {
+  //var mp = req.body.mastPasswd;
+  console.log(req.body);
+  var s1 = req.body
+  if(s1.mastPasswd == mpg){
+    res.send(200);
+  }
+  res.send(401);
+})
 app.get("/getToken" , (req,res) => {
     var data = "amey"
     var token = jwt.createJWT(data)
