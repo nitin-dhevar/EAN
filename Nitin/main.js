@@ -2,6 +2,7 @@ const mongoose =require('mongoose');
 var mongodb = require('mongodb');
 const { User}  = require(process.cwd() + '/models/user');
 const { vUser}  = require(process.cwd() + '/models/upload');
+const { Teacher } =require(process.cwd()+'/models/teacher');
 const bodyParser = require('body-parser');
 var request = require('request');
 var alias = '/nd';
@@ -144,6 +145,26 @@ mongoose.connect(url)
                await User.deleteOne({regId: tempregId }, function (err, data) {})
             } 
             getUsers(tempregId);
+            res.json("Deleted!");
+});
+    
+     app.post(alias + '/getTeacher', (req, res) => {
+            var tempTeacherId=req.body.TeacherId;
+             async function getUsers(tempTeacherId){
+                 const user=await Teacher.find({TeacherId: tempTeacherId }, function (err, data) {});
+                console.log(user);
+                 res.json(user);
+             }
+             getUsers(tempTeacherId);
+         
+         });
+    
+    app.delete(alias + '/deleteTeacher', (req, res) => {
+            var tempTeacherId=req.body.TeacherId;
+            async function getUsers(tempTeacherId){
+               await Teacher.deleteOne({TeacherId: tempTeacherId }, function (err, data) {})
+            } 
+            getUsers(tempTeacherId);
             res.json("Deleted!");
 });
 }
