@@ -6,7 +6,8 @@ const multer = require('multer');
 const _ = require('lodash');
 const fs = require('fs');
 const expoN = require(process.cwd() + '/notify.js');
-const wc = require('which-country');
+const schedule = require('node-schedule');
+const dateFormat = require('dateformat');
 process.env.TZ = 'Asia/Calcutta';
 //****************************************************************************************************************************************** */
 const {Notice} = require(process.cwd()+'/models/notice');
@@ -62,9 +63,7 @@ module.exports = function(app, router){
         for(let i of s1){
             newnotice.batches.push(i);
         }
-        // newnotice.date1  = new Date().toLocaleDateString('en-Us',{
-        //     timeZone:'Asia/Calcutta'
-        // })
+        
         newnotice.date1 = new Date();
         newnotice.timestamp = new Date().toLocaleString('en-US', {
             timeZone: 'Asia/Calcutta'
@@ -150,6 +149,15 @@ module.exports = function(app, router){
         res.send(d);
     });
 
+    var j = schedule.scheduleJob('*/1 * * * *',function(){
+        const deldate = dateFormat(new Date(),"mm/dd/yyyy");
+        Notice.deleteMany({validity:deldate}).then((doc)=>{
+           console.log(doc);
+        },(err)=>{
+            console.log(err);
+        });
+      });
+
     function sendNoticeToUser(notice){
         (async () => {
           tokens = []
@@ -172,5 +180,4 @@ module.exports = function(app, router){
 }
 
 
-//https://stackoverflow.com/questions/51301301/how-would-i-get-a-function-to-run-every-24-hours-on-a-server
 

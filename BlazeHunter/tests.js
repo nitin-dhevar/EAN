@@ -17,10 +17,8 @@ const schedule = require('node-schedule');
 // var t1 = "I am a good person"
 // console.log(t1.split(" ").join(''));
 
-// var j = schedule.scheduleJob('')
-
-var wc = require('which-country');
-
-// pass [lng, lat]
-console.log(wc([37, 55])); // RUS
-console.log(wc([-100, 40])); // USA
+var j = schedule.scheduleJob('*/1 * * * *',function(){
+  var d = new Date().toLocaleTimeString();
+    console.log(d);
+    
+});
