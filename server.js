@@ -37,8 +37,14 @@ router.use(function (req, res, next) {
 
   })
 app.set('view engine', 'hbs');
-app.get('/', function (req, res) {
+app.get('/main', function (req, res) {
     res.render('maintenance');
+});
+app.get('/', function (req, res) {
+  res.render('notice2');
+});
+app.get('/notice', function (req, res) {
+  res.render('login');
 });
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
