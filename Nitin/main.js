@@ -167,4 +167,26 @@ mongoose.connect(url)
             getUsers(tempTeacherId);
             res.json("Deleted!");
 });
+     app.get(alias + '/getAllTeachers', (req, res) => {
+            
+             async function getUsers(){
+                 const user=await Teacher.find();
+                console.log(user);
+                 res.json(user);
+             }
+             getUsers();
+         
+         });
+    
+     app.get(alias + '/getAllStudents', (req, res) => {
+         
+            async function getUsers(){
+                const user=await User.find();
+               console.log(user);
+                res.json(user);
+            }
+            getUsers();
+        
+        });
+    
 }
