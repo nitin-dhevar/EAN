@@ -142,7 +142,7 @@ module.exports = function(app, router){
     });
 
     app.get(alias+'/test',(req,res)=>{
-        res.send(new Date().toLocaleDateString());
+        res.send(new Date().toLocaleTimeString());
     });
 
     function sendNoticeToUser(notice){
