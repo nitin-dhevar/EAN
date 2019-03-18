@@ -149,7 +149,7 @@ module.exports = function(app, router){
         res.send(d);
     });
 
-    var j = schedule.scheduleJob('*/1 * * * *',function(){
+    var j = schedule.scheduleJob('16 19 * * *',function(){
         const deldate = dateFormat(new Date(),"mm/dd/yyyy");
         Notice.deleteMany({validity:deldate}).then((doc)=>{
            console.log(doc);
