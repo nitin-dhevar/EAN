@@ -21,4 +21,4 @@ var j = schedule.scheduleJob('*/1 * * * *',function(){
   var d = new Date().toLocaleTimeString();
     console.log(d);
     
-});
+}); 

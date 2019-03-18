@@ -397,7 +397,12 @@
   <script src="./assets/vendor/sweetalert2/dist/sweetalert2.min.js"></script>
   <script src="./assets/vendor/bootstrap-notify/bootstrap-notify.min.js"></script>
   <script src="./assets/vendor/list.js/dist/list.min.js"></script>
-
+	<script src="./assets/js/amazon-cognito-auth.min.js"></script>
+	<script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script> 
+	<script src="./assets/js/amazon-cognito-identity.min.js"></script>   
+	<script src="./assets/js/config.js"></script>
+  
+  
 
   
 
@@ -1269,6 +1274,29 @@ function cancel(){
 
 
 
+</script>
+
+<script>
+
+      
+    var poolData = {
+          UserPoolId : _config.cognito.userPoolId, // Your user pool id here
+          ClientId : _config.cognito.clientId, // Your client id here
+      };
+    
+      var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
+    
+       var cognitoUser = userPool.getCurrentUser();
+
+     if (cognitoUser != null) {
+        cognitoUser.getSession(function(err, session) {
+            if (err) {
+                alert(err);
+                return;
+            }
+            console.log(session);
+        });
+    }
 </script>
 
 </body>

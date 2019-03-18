@@ -11,6 +11,7 @@ const dateFormat = require('dateformat');
 process.env.TZ = 'Asia/Calcutta';
 //****************************************************************************************************************************************** */
 const {Notice} = require(process.cwd()+'/models/notice');
+const {User} = require(process.cwd()+'/models/user');
 //****************************************************************************************************************************************** */
 const storage = multer.diskStorage({
     destination:function(req,file,cb){
@@ -77,7 +78,8 @@ module.exports = function(app, router){
                 title:doc.title,
                 tname:doc.tname,
                 tbody:doc.tbody,
-                date1:doc.date1
+                date1:doc.date1,
+                batches:doc.batches
             }
             sendNoticeToUser(notice);
             console.log(validdata);
@@ -160,20 +162,28 @@ module.exports = function(app, router){
 
     function sendNoticeToUser(notice){
         (async () => {
-          tokens = []
+          tokens = [];
+          console.log("Push Notifications");
+          
           User.find({},(error, users) => {
+
                 for (let user of users) {
-                   notice.batches.forEach((b)=>{
-                        if(user.batch==b){
+                   notice.batches.forEach((b)=>{        
+                       var s = b.slice(1,b.length);     
+                       //console.log(s);
+                                
+                        if(user.batch==b[0]&&user.division==s){
                             if(user.expoToken!=="null")
                                 tokens.push(user.expoToken.substring());
                         }
                     })
                   }
-                  console.log(tokens);
+                  console.log(` tokens ${tokens}`);
                   expoN.sendNotifiaction(tokens,notice);
             })
         //tokens = ["Xgt987G-tFWDcWjftr5yWv"];
+        console.log(tokens);
+        
             expoN.sendNotifiaction(tokens,notice);
         })();
       }
