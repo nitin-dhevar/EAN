@@ -1,6 +1,6 @@
 const express = require('express');
 const jwt = require('./Auth');
-port = process.env.PORT || 3001 ;
+port = process.env.PORT || 3000 ;
 // var checkPost = [];
 const bodyParser = require('body-parser');
 var app = express();

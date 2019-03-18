@@ -44,7 +44,7 @@ function validate(req){
 //API's
 //scheduling remove notice after every 24 hours
 module.exports = function(app, router){
-    const admin = require('./admin')(app,mongoose);
+    const admin = require('./admin')(app,mongoose,upload);
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use('/public',express.static('public'));
@@ -143,14 +143,8 @@ module.exports = function(app, router){
 
     });
 
-    app.get(alias+'/test',(req,res)=>{
-        var d = {
-            time:new Date().toLocaleTimeString(),
-            date:new Date().toLocaleDateString(),
-        }
-        res.send(d);
-    });
 
+//*********************************************************************************************************************************************** */
     var j = schedule.scheduleJob('22 19 * * *',function(){
         const deldate = dateFormat(new Date(),"mm/dd/yyyy");
         Notice.deleteMany({validity:deldate}).then((doc)=>{

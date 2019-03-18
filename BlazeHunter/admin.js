@@ -2,7 +2,7 @@ const bodyParser = require('body-parser');
 const {Notice} = require(process.cwd()+'/models/notice');
 const alias = '/bh';
 
-module.exports = function(app,mongoose){
+module.exports = function(app,mongoose,upload){
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended:true}));
 
@@ -39,6 +39,15 @@ module.exports = function(app,mongoose){
         });
     });
 
+
+    app.post(alias+'/uploadcsv',upload.single('csvfile'),(req,res)=>{
+        console.log(req.body);
+        res.status(200).send();
+    });
+
+
+
+//************************************************************************************************************************************************ */
     app.get(alias+'/teachernotice',(req,res)=>{
         Notice.find().then((docs)=>{
             res.send(docs);
