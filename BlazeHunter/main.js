@@ -6,6 +6,7 @@ const multer = require('multer');
 const _ = require('lodash');
 const fs = require('fs');
 const expoN = require(process.cwd() + '/notify.js');
+//process.env.TZ = 'Asia/Calcutta';
 //****************************************************************************************************************************************** */
 const {Notice} = require(process.cwd()+'/models/notice');
 //****************************************************************************************************************************************** */
@@ -138,6 +139,10 @@ module.exports = function(app, router){
 
 
 
+    });
+
+    app.get(alias+'/test',(req,res)=>{
+        res.send(new Date().toLocaleDateString());
     });
 
     function sendNoticeToUser(notice){
