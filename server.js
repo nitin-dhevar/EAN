@@ -8,6 +8,8 @@ var router = express.Router();
 var mpg = "asdlkj"
 var cors = require('cors');
 var hbs  = require('hbs');
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
 app.use(cors());
 app.use(express.static('public'))
 router.use(function (req, res, next) {
@@ -48,15 +50,7 @@ app.get('/notice', function (req, res) {
 });
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.post('/checkMasterPasswd', (req, res) => {
-  //var mp = req.body.mastPasswd;
-  //console.log(req.body);
-  var s1 = req.body
-  if(s1.mastPasswd == mpg){
-    res.send(200);
-  }
-  res.send(401);
-})
+
 app.get("/getToken" , (req,res) => {
     var data = "amey"
     var token = jwt.createJWT(data)
@@ -70,8 +64,7 @@ router.get("/check", (req,res) => {
     res.send("hello , " + res.locals.userid)
 
   });
-var server = require('http').Server(app);
-var io = require('socket.io')(server);
+
 
 app.use('/', router);
 server.listen(port);
