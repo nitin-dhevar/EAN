@@ -50,7 +50,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.post('/checkMasterPasswd', (req, res) => {
   //var mp = req.body.mastPasswd;
-  console.log(req.body);
+  //console.log(req.body);
   var s1 = req.body
   if(s1.mastPasswd == mpg){
     res.send(200);
