@@ -145,7 +145,7 @@ module.exports = function(app, router){
 
 
 //*********************************************************************************************************************************************** */
-    var j = schedule.scheduleJob('22 19 * * *',function(){
+    var j = schedule.scheduleJob('00 23 * * *',function(){
         const deldate = dateFormat(new Date(),"mm/dd/yyyy");
         Notice.deleteMany({validity:deldate}).then((doc)=>{
            console.log(doc);
