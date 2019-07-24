@@ -1,10 +1,11 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="EAN">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="EAN">
   <meta name="author" content="Bunksheet Inc.">
   <title>EAN</title>
   <link rel="icon" href="./assets/img/brand/favicon.png" type="image/png">
@@ -17,1287 +18,1342 @@
   <!-- Argon CSS -->
   <link rel="stylesheet" href="./assets/vendor/animate.css/animate.css">
   <link rel="stylesheet" href="./assets/css/argon.min.css?v=1.0.0" type="text/css">
-  
-  
+
+
 </head>
+
 <body>
-    
-    <nav class="sidenav navbar navbar-vertical fixed-left navbar-expand-xs navbar-light bg-white" id="sidenav-main">
-        <div class="scrollbar-inner">
-          <!-- Brand -->
-          <div class="sidenav-header d-flex align-items-center">
-             <p class="text-warning navbar-brand display-3">BUNKSHEET</p>
-            <div class="ml-auto">
-              <!-- Sidenav toggler -->
-              <div class="sidenav-toggler d-none d-xl-block" data-action="sidenav-unpin" data-target="#sidenav-main">
-                <div class="sidenav-toggler-inner">
-                  <i class="sidenav-toggler-line"></i>
-                  <i class="sidenav-toggler-line"></i>
-                  <i class="sidenav-toggler-line"></i>
-                </div>
-              </div>
+
+  <nav class="sidenav navbar navbar-vertical fixed-left navbar-expand-xs navbar-light bg-white" id="sidenav-main">
+    <div class="scrollbar-inner">
+      <!-- Brand -->
+      <div class="sidenav-header d-flex align-items-center">
+        <p class="text-warning navbar-brand display-3">BUNKSHEET</p>
+        <div class="ml-auto">
+          <!-- Sidenav toggler -->
+          <div class="sidenav-toggler d-none d-xl-block" data-action="sidenav-unpin" data-target="#sidenav-main">
+            <div class="sidenav-toggler-inner">
+              <i class="sidenav-toggler-line"></i>
+              <i class="sidenav-toggler-line"></i>
+              <i class="sidenav-toggler-line"></i>
             </div>
           </div>
-          <div class="navbar-inner">
-            <!-- Collapse -->
-            
-              <!-- Nav items -->
-              <ul class="nav navbar-nav nav-tabs" role="tablist">
-                <li class="nav-item" >
-                  <a class="nav-link active" data-toggle="tab" href="#dashboard" role="tab"  aria-selected="true" >
-                    <i class="ni ni-shop text-warning"></i>
-                    <span class="nav-link-text">Dashboards</span>
-                  </a>
-                  
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" data-toggle="tab"   href="#noticepanel" role="tab"  aria-selected="false">
-                    <i class="ni ni-shop text-warning"></i>
-                    <span class="nav-link-text">Notice</span>
-                  </a>
-                  
-                </li>
-               <!---
+        </div>
+      </div>
+      <div class="navbar-inner">
+        <!-- Collapse -->
+
+        <!-- Nav items -->
+        <ul class="nav navbar-nav nav-tabs" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#dashboard" role="tab" aria-selected="true">
+              <i class="ni ni-shop text-warning"></i>
+              <span class="nav-link-text">Dashboards</span>
+            </a>
+
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#noticepanel" role="tab" aria-selected="false">
+              <i class="ni ni-shop text-warning"></i>
+              <span class="nav-link-text">Notice</span>
+            </a>
+
+          </li>
+
+          <!---
                /* mm-dd-yyyy*/
                Not Selected ---N
                
                -->
-              
-              </ul>
-              <!-- Divider -->
-           
-              <!-- Heading -->
-          
-              <!-- Navigation -->
-              
-            
-          </div>
+
+        </ul>
+        <!-- Divider -->
+
+        <!-- Heading -->
+
+        <!-- Navigation -->
+
+
+      </div>
+    </div>
+  </nav>
+
+  <div class="main-content" id="panel">
+
+    <nav class="navbar navbar-top navbar-expand navbar-dark bg-gradient-warning border-bottom">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <!-- Search form -->
+          <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block"
+            href="javascript:void(0)">EXAM--ASSIGNMENT--NOTICE</a>
+          <!-- Navbar links -->
+
+          <ul class="navbar-nav align-items-center ml-md-auto ">
+            <li class="nav-item dropdown">
+              <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+
+                <div class="media align-items-center">
+                  <span class="avatar avatar-sm rounded-circle">
+                    <img alt="" src="">
+                  </span>
+                  <div class="media-body ml-2 d-none d-lg-block">
+                    <span class="mb-0 text-sm  font-weight-bold" id="tname"></span>
+                    <span class="mb-0 text-sm  font-weight-bold" id="tid"></span>
+                  </div>
+                </div>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right">
+                <div class="dropdown-header noti-title">
+                  <h6 class="text-overflow m-0">Welcome!</h6>
+                </div>
+
+                <a href="#!" role="button" onclick="logout()" class="dropdown-item ">
+                  <i class="ni ni-user-run"></i>
+                  <span>Logout</span>
+                </a>
+              </div>
+            </li>
+          </ul>
         </div>
-      </nav>
+      </div>
+    </nav>
+    <div class="header bg-gradient-warning ">
+      <div class="container-fluid">
+        <div class="header-body py-1">
 
-      <div class="main-content" id="panel">
 
-        <nav class="navbar navbar-top navbar-expand navbar-dark bg-gradient-warning border-bottom">
-          <div class="container-fluid">
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <!-- Search form -->
-              <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="javascript:void(0)">EXAM--ASSIGNMENT--NOTICE</a>
-              <!-- Navbar links -->
-           
-              <ul class="navbar-nav align-items-center ml-md-auto ">
-                <li class="nav-item dropdown">
-                  <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
-                    <div class="media align-items-center">
-                      <span class="avatar avatar-sm rounded-circle">
-                        <img alt="" src="">
-                      </span>
-                      <div class="media-body ml-2 d-none d-lg-block">
-                        <span class="mb-0 text-sm  font-weight-bold" id="tname">John Snow</span>
-						<span class="mb-0 text-sm  font-weight-bold" id="tid">164</span>
+
+          <div class="tab-content">
+            <div class="tab-pane fade show active" id="dashboard" role="tabpanel">
+              <div class="container-fluid ">
+
+                <div class="row">
+
+                  <div class="col-lg-6">
+                    <form>
+                      <div class="card">
+                        <div class="card-header bg-transparent d-flex justify-content-between">
+                          <h3 class="mb-0">Details</h3>
+                          <input class="btn btn-sm btn-secondary" type="reset" value="Reset">
+                        </div>
+                        <div class="card-body">
+                          <div class="form-group">
+                            <label class="form-control-label" for="title">Title</label>
+                            <textarea class="form-control" id="title" rows="1" resize="none"
+                              placeholder="Enter your title..." required></textarea>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-control-label " for="body">Message Body</label>
+                            <textarea class="form-control " id="body" rows="18" resize="none"
+                              placeholder="Enter your message..." required></textarea>
+                          </div>
+
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="card ">
+                      <div class="card-header bg-transparent ">
+                        <h3 class="mb-0">Configuration</h3>
+                      </div>
+                      <div class="card-body " id="rootwizard">
+                        <div class="d-flex ">
+                          <div class="form-group col">
+                            <label for="category">Category</label>
+                            <select class="form-control" id="category">
+                              <option value="assignment">Assignment</option>
+                              <option value="notice">Notice</option>
+                              <option value="exam">Exam Paper</option>
+
+                            </select>
+                          </div>
+                          <div class="form-group col">
+                            <label for="validity">Notice Validity</label>
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+                              </div>
+                              <input class="form-control datepicker" id="validity" placeholder="Select date" type="text"
+                                data-date-end-date="+1y" data-date-title="Select End Date" data-date-start-date="0d"
+                                autocomplete="off" required>
+                            </div>
+                          </div>
+                        </div>
+
+                        <input type="file" id="filelink" class="form-control-file">
+                        <div class="progress-wrapper">
+
+                          <div class="progress ">
+                            <div class="progress-bar bg-warning " role="progressbar" aria-valuenow="0" aria-valuemin="0"
+                              aria-valuemax="100" style="width: 0%;"></div>
+                          </div>
+
+
+                        </div>
+                        <div class=" mt--5 ">
+
+
+                          <ul class="nav nav-pills nav-pills-circle d-flex justify-content-around" role="tablist">
+                            <li class="nav-item d-flex flex-column text-center">
+                              <a class="nav-link " data-toggle="tab" href="#year" role="tab" style="z-index: 1">
+                                <span class="nav-link-icon d-block">1</span>
+                              </a>
+                              <p>Year</p>
+                            </li>
+                            <li class="nav-item d-flex flex-column text-center">
+                              <a class="nav-link" data-toggle="tab" href="#branch" role="tab" style="z-index: 1">
+                                <span class="nav-link-icon d-block">2</span>
+                              </a>
+                              <p>Branch</p>
+                            </li>
+                            <li class="nav-item d-flex flex-column text-center">
+                              <a class="nav-link" data-toggle="tab" href="#division" role="tab" style="z-index: 1">
+                                <span class="nav-link-icon d-block">3</span>
+                              </a>
+                              <p>Division</p>
+                            </li>
+                            <li class="nav-item d-flex flex-column text-center">
+                              <a class="nav-link" data-toggle="tab" href="#batch" role="tab" style="z-index: 1">
+                                <span class="nav-link-icon d-block">4</span>
+                              </a>
+                              <p>Batch</p>
+                            </li>
+                          </ul>
+
+
+
+
+
+
+                        </div>
+
+                        <div class="tab-content">
+                          <div class="tab-pane fade show active" id="year" role="tabpanel">
+                            <div class="d-flex flex-column ">
+                              <div class="d-flex justify-content-around my-3">
+
+                                <label class="custom-toggle custom-toggle-warning">
+                                  <input type="checkbox" checked>
+                                  <span class="custom-toggle-slider rounded-circle" data-label-off="All"
+                                    data-label-on="All"></span>
+                                </label>
+                                <label class="custom-toggle custom-toggle-warning">
+                                  <input type="checkbox" disabled>
+                                  <span class="custom-toggle-slider  rounded-circle" data-label-off="FE"
+                                    data-label-on="FE"></span>
+                                </label>
+                                <label class="custom-toggle custom-toggle-warning">
+                                  <input type="checkbox" disabled>
+                                  <span class="custom-toggle-slider  rounded-circle" data-label-off="SE"
+                                    data-label-on="SE"></span>
+                                </label>
+                                <label class="custom-toggle custom-toggle-warning">
+                                  <input type="checkbox" disabled>
+                                  <span class="custom-toggle-slider  rounded-circle" data-label-off="TE"
+                                    data-label-on="TE"></span>
+                                </label>
+                                <label class="custom-toggle custom-toggle-warning">
+                                  <input type="checkbox" disabled>
+                                  <span class="custom-toggle-slider  rounded-circle" data-label-off="BE"
+                                    data-label-on="BE"></span>
+                                </label>
+
+                              </div>
+
+
+
+                            </div>
+                          </div>
+                          <div class="tab-pane fade" id="branch" role="tabpanel">
+                            <div class="d-flex flex-column ">
+                              <div class="d-flex justify-content-around my-3">
+
+
+                                <label class="custom-toggle custom-toggle-warning">
+                                  <input type="checkbox">
+                                  <span class="custom-toggle-slider  rounded-circle" data-label-off="CE"
+                                    data-label-on="CE"></span>
+                                </label>
+                                <label class="custom-toggle custom-toggle-warning">
+                                  <input type="checkbox">
+                                  <span class="custom-toggle-slider  rounded-circle" data-label-off="IT"
+                                    data-label-on="IT"></span>
+                                </label>
+                                <label class="custom-toggle custom-toggle-warning">
+                                  <input type="checkbox">
+                                  <span class="custom-toggle-slider  rounded-circle" data-label-off="ETC"
+                                    data-label-on="ETC"></span>
+                                </label>
+
+
+                              </div>
+
+
+
+                            </div>
+                          </div>
+                          <div class="tab-pane fade" id="division" role="tabpanel">
+                            <div class="d-flex flex-column ">
+                              <div class="d-flex justify-content-around my-3">
+
+
+
+
+                              </div>
+
+
+
+                            </div>
+                          </div>
+                          <div class="tab-pane fade" id="batch" role="tabpanel">
+                            <div class="d-flex flex-column ">
+                              <div class="d-flex justify-content-around my-3">
+
+
+
+
+
+                              </div>
+
+
+
+                            </div>
+                          </div>
+                        </div>
+
+
+
+
+
+                        <div class="d-flex justify-content-between align-items-center mt-4 ">
+                          <div>
+                            <button type="button" class="btn btn-warning btn-submit" id="submit">Submit</button>
+                            <button type="button" class=" d-none btn btn-danger " onclick="cancel()"
+                              id="cancelajax">Cancel</button>
+
+                          </div>
+                          <div class="mdl-progress mdl-js-progress is-upgraded col-md-4"
+                            data-upgraded=",MaterialProgress">
+                            <div id="progressbar" class="progressbar bar bar1" style="width: 0%;"></div>
+                            <div class="bufferbar bar bar2" style="width: 100%;"></div>
+                            <div class="auxbar bar bar3" style="width: 0%;"></div>
+                          </div>
+                          <div>
+                            <button type="button" class="btn btn-dark  btn-previous">Prev</button>
+                            <button type="button" class="btn btn-dark btn-next">Next</button>
+                          </div>
+
+                        </div>
+
+
                       </div>
                     </div>
-                  </a>
-                  <div class="dropdown-menu dropdown-menu-right">
-                    <div class="dropdown-header noti-title">
-                      <h6 class="text-overflow m-0">Welcome!</h6>
-                    </div>
-                   
-                    <a href="#!" role="button" class="dropdown-item ">
-                      <i class="ni ni-user-run"></i>
-                      <span>Logout</span>
-                    </a>
                   </div>
-                </li>
-              </ul>
+
+                </div>
+
+              </div>
             </div>
+            <div class="tab-pane fade " id="noticepanel" role="tabpanel">
+              <div class="card shadow">
+                <div class="card-header d-flex justify-content-between">
+                  <h3 class="mb-0">Notices</h3>
+                  <button type="button" onclick="getone()" class="btn btn-success">Refresh</button>
+                </div>
+                <div class="card-body">
+
+
+                  <div class="table-responsive" data-toggle="list"
+                    data-list-values='["name", "budget", "status", "completion"]'>
+                    <table class="table align-items-center table-flush">
+                      <thead class="thead-light">
+                        <tr>
+                          <th scope="col" class="sort" data-sort="name">Title</th>
+                          <th scope="col" class="sort" data-sort="budget">Category</th>
+                          <th scope="col" class="sort" data-sort="status">Validity</th>
+
+                          <th scope="col-2"></th>
+                        </tr>
+                      </thead>
+                      <tbody class="list" id="totalnotices">
+
+
+
+
+
+
+
+
+                      </tbody>
+                    </table>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+
           </div>
-        </nav>
-        <div class="header bg-gradient-warning ">
-          <div class="container-fluid">
-            <div class="header-body py-1">
-              
-
-              
-                
-                    <div class="tab-content" >
-                        <div class="tab-pane fade show active" id="dashboard" role="tabpanel" >
-                          <div class="container-fluid ">
-                
-                            <div class="row">
-                              
-                              <div class="col-lg-6">
-                                  <form >
-                                <div class="card">
-                                  <div class="card-header bg-transparent d-flex justify-content-between">
-                                    <h3 class="mb-0">Details</h3>
-                                    <input class="btn btn-sm btn-secondary" type="reset" value="Reset">
-                                  </div>
-                                  <div class="card-body">
-                                      <div class="form-group">
-                                          <label class="form-control-label" for="title">Title</label>
-                                      <textarea class="form-control" id="title" rows="1" resize="none"  placeholder="Enter your title..." required></textarea>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="form-control-label " for="body">Message Body</label>
-                                        <textarea class="form-control " id="body" rows="18" resize="none" placeholder="Enter your message..." required ></textarea>
-                                          </div>
-                                      
-                                  </div>
-                                </div>
-                                </form>
-                              </div>
-                              <div class="col-lg-6">
-                                <div class="card ">
-                                  <div class="card-header bg-transparent ">
-                                    <h3 class="mb-0">Configuration</h3>
-                                  </div>
-                                  <div class="card-body "  id="rootwizard">
-                                    <div class="d-flex ">
-                                        <div class="form-group col">
-                                            <label for="category">Category</label>
-                                            <select class="form-control" id="category">
-                                              <option value="assignment">Assignment</option>
-                                              <option value="notice">Notice</option>
-                                              <option value="exam">Exam Paper</option>
-                                              
-                                            </select>
-                                          </div>
-                                          <div class="form-group col">
-                                              <label for="validity">Notice Validity</label>
-                                              <div class="input-group">
-                                                  <div class="input-group-prepend">
-                                                      <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
-                                                  </div>
-                                                  <input class="form-control datepicker" id="validity" placeholder="Select date" type="text"   data-date-end-date="+1y"   data-date-title="Select End Date" data-date-start-date="0d" autocomplete="off" required>
-                                              </div>
-                                          </div>
-                                    </div>
-                                   
-                                  <input type="file" id="filelink" class="form-control-file"  >
-                                      <div class="progress-wrapper" >
-                                          
-                                          <div class="progress " >
-                                            <div class="progress-bar bg-warning " role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
-                                          </div>
-                    
-                                        
-                                        </div>
-                                    <div class=" mt--5 "  >
-                                        
-                    
-                                        <ul class="nav nav-pills nav-pills-circle d-flex justify-content-around"  role="tablist">
-                                            <li class="nav-item d-flex flex-column text-center">
-                                              <a class="nav-link "  data-toggle="tab" href="#year" role="tab" style="z-index: 1">
-                                                <span class="nav-link-icon d-block">1</span>
-                                              </a>
-                                              <p >Year</p>
-                                            </li>
-                                            <li class="nav-item d-flex flex-column text-center">
-                                              <a class="nav-link"  data-toggle="tab" href="#branch" role="tab"style="z-index: 1" >
-                                                <span class="nav-link-icon d-block">2</span>
-                                              </a>
-                                              <p >Branch</p>
-                                            </li>
-                                            <li class="nav-item d-flex flex-column text-center">
-                                              <a class="nav-link"  data-toggle="tab" href="#division" role="tab"style="z-index: 1">
-                                                <span class="nav-link-icon d-block">3</span>
-                                              </a>
-                                              <p >Division</p>
-                                            </li>
-                                            <li class="nav-item d-flex flex-column text-center" >
-                                                <a class="nav-link"  data-toggle="tab" href="#batch" role="tab" style="z-index: 1">
-                                                  <span class="nav-link-icon d-block">4</span>
-                                                </a>
-                                                <p >Batch</p>
-                                              </li>
-                                          </ul>
-                    
-                    
-                    
-                    
-                                       
-                                                      
-                                    </div>
-                    
-                                    <div class="tab-content" >
-                                        <div class="tab-pane fade show active" id="year" role="tabpanel" >
-                                            <div class="d-flex flex-column ">
-                                                <div class="d-flex justify-content-around my-3">
-                            
-                                                    <label class="custom-toggle custom-toggle-warning">
-                                                        <input type="checkbox" checked >
-                                                        <span class="custom-toggle-slider rounded-circle" data-label-off="All" data-label-on="All"></span>
-                                                    </label>
-                                                    <label class="custom-toggle custom-toggle-warning">
-                                                        <input type="checkbox" disabled >
-                                                        <span class="custom-toggle-slider  rounded-circle" data-label-off="FE" data-label-on="FE"></span>
-                                                    </label>
-                                                    <label class="custom-toggle custom-toggle-warning">
-                                                        <input type="checkbox" disabled >
-                                                        <span class="custom-toggle-slider  rounded-circle" data-label-off="SE" data-label-on="SE"></span>
-                                                    </label>
-                                                    <label class="custom-toggle custom-toggle-warning">
-                                                        <input type="checkbox" disabled>
-                                                        <span class="custom-toggle-slider  rounded-circle" data-label-off="TE" data-label-on="TE"></span>
-                                                    </label>
-                                                    <label class="custom-toggle custom-toggle-warning">
-                                                        <input type="checkbox" disabled>
-                                                        <span class="custom-toggle-slider  rounded-circle" data-label-off="BE" data-label-on="BE"></span>
-                                                    </label>
-                                
-                                                </div>
-                                               
-                                               
-                            
-                                            </div>
-                                          </div>
-                                        <div class="tab-pane fade" id="branch" role="tabpanel" >
-                                            <div class="d-flex flex-column ">
-                                                <div class="d-flex justify-content-around my-3">
-                            
-                                                  
-                                                    <label class="custom-toggle custom-toggle-warning">
-                                                        <input type="checkbox"  >
-                                                        <span class="custom-toggle-slider  rounded-circle" data-label-off="CE" data-label-on="CE"></span>
-                                                    </label>
-                                                    <label class="custom-toggle custom-toggle-warning">
-                                                        <input type="checkbox"  >
-                                                        <span class="custom-toggle-slider  rounded-circle" data-label-off="IT" data-label-on="IT"></span>
-                                                    </label>
-                                                    <label class="custom-toggle custom-toggle-warning">
-                                                        <input type="checkbox"  >
-                                                        <span class="custom-toggle-slider  rounded-circle" data-label-off="ETC" data-label-on="ETC"></span>
-                                                    </label>
-                                                   
-                                
-                                                </div>
-                                              
-                                               
-                            
-                                            </div>
-                                          </div>
-                                        <div class="tab-pane fade" id="division" role="tabpanel" >
-                                            <div class="d-flex flex-column ">
-                                                <div class="d-flex justify-content-around my-3">
-                            
-                                                   
-                                                   
-                                
-                                                </div>
-                                               
-                                               
-                            
-                                            </div>
-                                          </div>
-                                        <div class="tab-pane fade" id="batch" role="tabpanel" >
-                                            <div class="d-flex flex-column ">
-                                                <div class="d-flex justify-content-around my-3">
-                            
-                                                    
-                                                   
-                                                   
-                                
-                                                </div>
-                                               
-                                               
-                            
-                                            </div>
-                                          </div>
-                                    </div>
-                                   
-                                    
-                                   
-                                   
-                                   
-                                    <div class="d-flex justify-content-between align-items-center mt-4 ">
-                                        <div>
-                                            <button type="button" class="btn btn-warning btn-submit" id="submit">Submit</button>
-                                            <button type="button" class=" d-none btn btn-danger " onclick="cancel()" id="cancelajax">Cancel</button>
-                                            
-                                          </div>
-                                          <div  class="mdl-progress mdl-js-progress is-upgraded col-md-4" data-upgraded=",MaterialProgress"><div id="progressbar" class="progressbar bar bar1" style="width: 0%;"></div><div class="bufferbar bar bar2" style="width: 100%;"></div><div class="auxbar bar bar3" style="width: 0%;"></div></div>
-                                        <div>
-                                            <button type="button" class="btn btn-dark  btn-previous" >Prev</button>
-                                            <button type="button" class="btn btn-dark btn-next">Next</button>
-                                        </div>
-                                        
-                                      </div>
-                                      
-                                    
-                                  </div>
-                                </div>
-                              </div>
-                            
-                            </div>
-                           
-                        </div>
-                          </div>
-                        <div class="tab-pane fade " id="noticepanel" role="tabpanel" >
-                            <div class="card shadow">
-                              <div class="card-header d-flex justify-content-between">
-                                <h3 class="mb-0">Notices</h3>
-								<button type="button" onclick="getone()" class="btn btn-success">Refresh</button>
-                              </div>
-                              <div class="card-body">
 
 
-<div class="table-responsive" data-toggle="list" data-list-values='["name", "budget", "status", "completion"]'>
-  <table class="table align-items-center table-flush">
-      <thead class="thead-light">
-          <tr>
-              <th scope="col" class="sort" data-sort="name">Title</th>
-              <th scope="col" class="sort" data-sort="budget">Category</th>
-              <th scope="col" class="sort" data-sort="status">Validity</th>
-            
-              <th scope="col-2"></th>
-          </tr>
-      </thead>
-      <tbody class="list" id="totalnotices">
-          
-        
-          
-         
-          
-          
-           
-          
-      </tbody>
-  </table>
-</div>
+          <!-- Card stats -->
 
 
-                              </div>
-                            </div>
-                          </div>
-                       
-                    </div>
-              
-          
-              <!-- Card stats -->
-             
-                
-              
-          </div>
+
         </div>
-        
       </div>
-    
+
+    </div>
 
 
 
-     <!-- Argon Scripts -->
-  <!-- Core -->
-  <script src="./assets/vendor/jquery/dist/jquery.min.js"></script>
-  <script src="./assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="./assets/vendor/js-cookie/js.cookie.js"></script>
-  <script src="./assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
-  <script src="./assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
-  <script src="./assets/vendor/lavalamp/js/jquery.lavalamp.min.js"></script>
-  <script src="./assets/vendor/sweetalert2/dist/sweetalert2.min.js"></script>
-  <script src="./assets/vendor/bootstrap-notify/bootstrap-notify.min.js"></script>
-  <script src="./assets/vendor/list.js/dist/list.min.js"></script>
-	<script src="./assets/js/amazon-cognito-auth.min.js"></script>
-	<script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script> 
-	<script src="./assets/js/amazon-cognito-identity.min.js"></script>   
-	<script src="./assets/js/config.js"></script>
-  
-  
 
-  
-
-  <!-- Argon JS -->
-  <script src="./assets/vendor/dropzone/dist/min/dropzone.min.js"></script>
-  <script src="./assets/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-  
-  <script src="./assets/js/argon.min.js?v=1.0.0"></script>
-  
-
-  <!-- Demo JS - remove this in your project -->
-  <script src="./assets/js/demo.min.js"></script>
-  <script src="./assets/js/jquery.bootstrap.wizard.min.js"></script>
-  
-  <script>
-  $(document).ready(function() {
-  	$('#rootwizard').bootstrapWizard({tabClass: 'nav nav-pills',nextSelector: '.btn-next', previousSelector: '.btn-previous',onTabClick: function(tab, navigation, index) {
-	
-		return false;
-	},onTabShow: function(tab, navigation, index) {
-		var $total = navigation.find('li').length;
-		var $current = index+1;
-		var $percent = ($current/$total) * 100;
-		$('#rootwizard .progress-bar').css({width:$percent+'%'});
-	}});
-});
-  </script>
+    <!-- Argon Scripts -->
+    <!-- Core -->
+    <script src="./assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="./assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./assets/vendor/js-cookie/js.cookie.js"></script>
+    <script src="./assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+    <script src="./assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
+    <script src="./assets/vendor/lavalamp/js/jquery.lavalamp.min.js"></script>
+    <script src="./assets/vendor/sweetalert2/dist/sweetalert2.min.js"></script>
+    <script src="./assets/vendor/bootstrap-notify/bootstrap-notify.min.js"></script>
+    <script src="./assets/vendor/list.js/dist/list.min.js"></script>
+    <script src="./assets/js/amazon-cognito-auth.min.js"></script>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script>
+    <script src="./assets/js/amazon-cognito-identity.min.js"></script>
+    <script src="./assets/js/config.js"></script>
 
 
-  <script>
 
-    function opt(field,start,end){
-      $("#"+field+" >.flex-column >.justify-content-around").empty();
-        for(var i=start; i<=end ;i++){
-          
-          $("#"+field+" >.flex-column >.justify-content-around").append(
-            "<label class='custom-toggle custom-toggle-warning'> <input type='checkbox'  > <span class='custom-toggle-slider  rounded-circle' data-label-off='" + i +"'  data-label-on='"+i+"'></span> </label>" );
+
+
+    <!-- Argon JS -->
+    <script src="./assets/vendor/dropzone/dist/min/dropzone.min.js"></script>
+    <script src="./assets/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+    <script src="./assets/js/argon.min.js?v=1.0.0"></script>
+
+
+    <!-- Demo JS - remove this in your project -->
+    <script src="./assets/js/demo.min.js"></script>
+    <script src="./assets/js/jquery.bootstrap.wizard.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $('#rootwizard').bootstrapWizard({
+          tabClass: 'nav nav-pills', nextSelector: '.btn-next', previousSelector: '.btn-previous', onTabClick: function (tab, navigation, index) {
+
+            return false;
+          }, onTabShow: function (tab, navigation, index) {
+            var $total = navigation.find('li').length;
+            var $current = index + 1;
+            var $percent = ($current / $total) * 100;
+            $('#rootwizard .progress-bar').css({ width: $percent + '%' });
+          }
+        });
+      });
+    </script>
+
+
+    <script>
+
+      function opt(field, start, end) {
+        $("#" + field + " >.flex-column >.justify-content-around").empty();
+        for (var i = start; i <= end; i++) {
+
+          $("#" + field + " >.flex-column >.justify-content-around").append(
+            "<label class='custom-toggle custom-toggle-warning'> <input type='checkbox'  > <span class='custom-toggle-slider  rounded-circle' data-label-off='" + i + "'  data-label-on='" + i + "'></span> </label>");
         }
-    
-    }
 
-    function sopt(field,id){
-      $("#"+field+" >.flex-column >.justify-content-around").empty();
-
-        if(id == 1){
-          ['A','B','C','D'].forEach(function(i){ $("#"+field+" >.flex-column >.justify-content-around").append(
-            "<label class='custom-toggle custom-toggle-warning'> <input type='checkbox'  > <span class='custom-toggle-slider  rounded-circle' data-label-off='" + i +"'  data-label-on='"+i+"'></span> </label>" )});
-        return;
-        }
-        if(id == 2){
-          ['E','F','G','H'].forEach(function(i){ $("#"+field+" >.flex-column >.justify-content-around").append(
-            "<label class='custom-toggle custom-toggle-warning'> <input type='checkbox'  > <span class='custom-toggle-slider  rounded-circle' data-label-off='" + i +"'  data-label-on='"+i+"'></span> </label>" )});
-            return;
-        }
-        if(id == 3){
-          ['K','L','M','N'].forEach(function(i){ $("#"+field+" >.flex-column >.justify-content-around").append(
-            "<label class='custom-toggle custom-toggle-warning'> <input type='checkbox'  > <span class='custom-toggle-slider  rounded-circle' data-label-off='" + i +"'  data-label-on='"+i+"'></span> </label>" )});
-            return;
-        }
-        if(id == 4){
-          ['P','Q','R','S'].forEach(function(i){ $("#"+field+" >.flex-column >.justify-content-around").append(
-            "<label class='custom-toggle custom-toggle-warning'> <input type='checkbox'  > <span class='custom-toggle-slider  rounded-circle' data-label-off='" + i +"'  data-label-on='"+i+"'></span> </label>" )});
-            return;
-        }
-      
-    }
-
-
-
-
-
-
-function fields(elem,start,end,object){
-      for(var i=start ; i< end; i++){
-        $("#"+elem+" "+"input:eq(" + i +")").prop(object);
       }
-      
-}
 
+      function sopt(field, id) {
+        $("#" + field + " >.flex-column >.justify-content-around").empty();
 
-$(".btn-previous").on('click',function(){
-  if($("#branch").hasClass("active")  ){
-      fields("branch",0,3,{checked:false});
-      return;
-  }
-  if($("#division").hasClass("active")  ){
-      fields("division",0,11,{checked:false});
-      return;
-  }
-  if($("#batch").hasClass("active")  ){
-      fields("batch",0,11,{checked:false});
-      return;
-  }
-});
-
-
-$(".btn-next").on('click',function(event){
-    if($("#year").hasClass("active")  ){
-      var length = $( "#year input" ).length; 
-      var flag = true;
-      var count=0;
-      if($( "#year input" )[0].checked==true){
-        event.stopImmediatePropagation();
-        $.notify({
-          icon: 'ni ni-bulb-61',
-	title: 'Not Allowed',
-  message:""
-	
-},{
-	element: 'body',
-	position: null,
-  delay: 1000,
-  animate: {
-		enter: 'animated fadeInDown',
-		exit: 'animated fadeOutUp'
-	},
-  placement: {
-		from: "bottom",
-		align: "right"
-	},
-	type: 'secondary'
-});
-      }
-      for(var i=0; i< length ; i++ ){
-        if($( "#year input" )[i].checked==true){
-          count++;
-          fields("branch",0,3,{disabled:false});
-          flag = false;
+        if (id == 1) {
+          ['A', 'B', 'C', 'D'].forEach(function (i) {
+            $("#" + field + " >.flex-column >.justify-content-around").append(
+              "<label class='custom-toggle custom-toggle-warning'> <input type='checkbox'  > <span class='custom-toggle-slider  rounded-circle' data-label-off='" + i + "'  data-label-on='" + i + "'></span> </label>")
+          });
+          return;
         }
-      }if( $( "#year input" )[1].checked==true ){
-        fields("branch",0,3,{disabled:true});
-        fields("branch",0,3,{checked:false});
-          if(count > 1){
-            fields("branch",0,3,{disabled:false});
+        if (id == 2) {
+          ['E', 'F', 'G', 'H'].forEach(function (i) {
+            $("#" + field + " >.flex-column >.justify-content-around").append(
+              "<label class='custom-toggle custom-toggle-warning'> <input type='checkbox'  > <span class='custom-toggle-slider  rounded-circle' data-label-off='" + i + "'  data-label-on='" + i + "'></span> </label>")
+          });
+          return;
+        }
+        if (id == 3) {
+          ['K', 'L', 'M', 'N'].forEach(function (i) {
+            $("#" + field + " >.flex-column >.justify-content-around").append(
+              "<label class='custom-toggle custom-toggle-warning'> <input type='checkbox'  > <span class='custom-toggle-slider  rounded-circle' data-label-off='" + i + "'  data-label-on='" + i + "'></span> </label>")
+          });
+          return;
+        }
+        if (id == 4) {
+          ['P', 'Q', 'R', 'S'].forEach(function (i) {
+            $("#" + field + " >.flex-column >.justify-content-around").append(
+              "<label class='custom-toggle custom-toggle-warning'> <input type='checkbox'  > <span class='custom-toggle-slider  rounded-circle' data-label-off='" + i + "'  data-label-on='" + i + "'></span> </label>")
+          });
+          return;
+        }
+
+      }
+
+
+
+
+
+
+      function fields(elem, start, end, object) {
+        for (var i = start; i < end; i++) {
+          $("#" + elem + " " + "input:eq(" + i + ")").prop(object);
+        }
+
+      }
+
+
+      $(".btn-previous").on('click', function () {
+        if ($("#branch").hasClass("active")) {
+          fields("branch", 0, 3, { checked: false });
+          return;
+        }
+        if ($("#division").hasClass("active")) {
+          fields("division", 0, 11, { checked: false });
+          return;
+        }
+        if ($("#batch").hasClass("active")) {
+          fields("batch", 0, 11, { checked: false });
+          return;
+        }
+      });
+
+
+      $(".btn-next").on('click', function (event) {
+        if ($("#year").hasClass("active")) {
+          var length = $("#year input").length;
+          var flag = true;
+          var count = 0;
+          if ($("#year input")[0].checked == true) {
             event.stopImmediatePropagation();
             $.notify({
-          icon: 'ni ni-bulb-61',
-	title: 'Not Allowed',
-  message:""
-	
-},{
-	element: 'body',
-	position: null,
-  delay: 1000,
-  animate: {
-		enter: 'animated fadeInDown',
-		exit: 'animated fadeOutUp'
-	},
-  placement: {
-		from: "bottom",
-		align: "right"
-	},
-	type: 'secondary'
-});
+              icon: 'ni ni-bulb-61',
+              title: 'Not Allowed',
+              message: ""
+
+            }, {
+                element: 'body',
+                position: null,
+                delay: 1000,
+                animate: {
+                  enter: 'animated fadeInDown',
+                  exit: 'animated fadeOutUp'
+                },
+                placement: {
+                  from: "bottom",
+                  align: "right"
+                },
+                type: 'secondary'
+              });
           }
-       
-        return;
-      }
-      if(flag == true){
-      event.stopImmediatePropagation();
-      $.notify({
-          icon: 'ni ni-bulb-61',
-	title: 'Not Allowed',
-  message:""
-	
-},{
-	element: 'body',
-	position: null,
-  delay: 1000,
-  animate: {
-		enter: 'animated fadeInDown',
-		exit: 'animated fadeOutUp'
-	},
-  placement: {
-		from: "bottom",
-		align: "right"
-	},
-	type: 'secondary'
-});
-
-      return;
-      }
-    }
-
-    if($("#branch").hasClass("active")  ){
-
-      var length = $( "#branch input" ).length; 
-        
-      var flag = true;
-      var temp;
-      var count=0;
-      var countyear=0;
-      for(var i=0; i< length ; i++ ){
-        if($( "#branch input" )[i].checked==true){ 
-          flag = false;
-          temp=i;
-          count++;
-        }
-       
-        
-      }
-      for(var i=0; i< 4 ; i++ ){
-      if($( "#year input" )[i].checked==true){
-          countyear++;
-         
-        }
-      }
-      if(countyear > 1  ){
-        event.stopImmediatePropagation();
-        $.notify({
-          icon: 'ni ni-bulb-61',
-	title: 'Not Allowed',
-  message:""
-	
-},{
-	element: 'body',
-	position: null,
-  delay: 1000,
-  animate: {
-		enter: 'animated fadeInDown',
-		exit: 'animated fadeOutUp'
-	},
-  placement: {
-		from: "bottom",
-		align: "right"
-	},
-	type: 'secondary'
-});
-        return;
-      }else if(countyear == 1 && $( "#year input" )[1].checked==true ){
-        opt("division",1,11);
-        return;
-      }
-      if(flag == true || count > 1){
-         event.stopImmediatePropagation();
-         $.notify({
-          icon: 'ni ni-bulb-61',
-	title: 'Not Allowed',
-  message:""
-	
-},{
-	element: 'body',
-	position: null,
-  delay: 1000,
-  animate: {
-		enter: 'animated fadeInDown',
-		exit: 'animated fadeOutUp'
-	},
-  placement: {
-		from: "bottom",
-		align: "right"
-	},
-	type: 'secondary'
-});
-
-      return;
-      }else{
-        switch(temp){
-          case 0: opt("division",1,4);
-          break;
-          case 1: opt("division",9,11);
-          break;
-          case 2: opt("division",5,8);
-          break;
-          
-        }
-      }
-    }
-
-
-
-    if($("#division").hasClass("active")  ){
-
-var length = $( "#division input" ).length; 
-  
-var flag = true;
-var count=0;
-var temp;
-for(var i=0; i< length ; i++ ){
-  if($( "#division input" )[i].checked==true){ 
-    flag = false;
-    temp=i;
-    count++;
-
-  }
-  
-  
-}
-for(var i=1; i< 5 ; i++ ){
-if($( "#year input" )[i].checked==true){
-          temp=i;
-         
-        }
-}
-if(flag == true || count > 1){
-   event.stopImmediatePropagation();
-   $.notify({
-          icon: 'ni ni-bulb-61',
-	title: 'Not Allowed',
-  message:""
-	
-},{
-	element: 'body',
-	position: null,
-  delay: 1000,
-  animate: {
-		enter: 'animated fadeInDown',
-		exit: 'animated fadeOutUp'
-	},
-  placement: {
-		from: "bottom",
-		align: "right"
-	},
-	type: 'secondary'
-});
-
-return;
-}else{
-        switch(temp){
-        
-          case 1: sopt("batch",1);
-          break;
-          case 2: sopt("batch",2);
-          break;
-          case 3: sopt("batch",3);
-          break;
-          case 4: sopt("batch",4);
-          break;
-          
-        }
-      }
-}
-
-
-
-
-   
-
-    
-
-});
-
-  $("#year input:eq(0)").on('click',function(event){
-  
-    if($("#year input:eq(0) ").is(":checked")){
-      fields("year",1,5,{checked:false});
-      fields("year",1,5,{disabled:true});
-      
-     
-    }else{
-      fields("year",1,5,{disabled:false});
-     
-    }
-  });
-
-
-
-  </script>
-
-  
-
-  <script>
-
-  function compute(){
-    
-var batches = "A1 A2 A3 A4 A5 A6 A7 A8 A9 A10 A11 B1 B2 B3 B4 B5 B6 B7 B8 B9 B10 B11 C1 C2 C3 C4 C5 C6 C7 C8 C9 C10 C11 D1 D2 D3 D4 D5 D6 D7 D8 D9 D10 D11 E1 E2 E3 E4 E5 E6 E7 E8 E9 E10 E11 F1 F2 F3 F4 F5 F6 F7 F8 F9 F10 F11 G1 G2 G3 G4 G5 G6 G7 G8 G9 G10 G11 H1 H2 H3 H4 H5 H6 H7 H8 H9 H10 H11 K1 K2 K3 K4 K5 K6 K7 K8 K9 K10 K11 L1 L2 L3 L4 L5 L6 L7 L8 L9 L10 L11 M1 M2 M3 M4 M5 M6 M7 M8 M9 M10 M11 N1 N2 N3 N4 N5 N6 N7 N8 N9 N10 N11 P1 P2 P3 P4 P5 P6 P7 P8 P9 P10 P11 Q1 Q2 Q3 Q4 Q5 Q6 Q7 Q8 Q9 Q10 Q11 R1 R2 R3 R4 R5 R6 R7 R8 R9 R10 R11 S1 S2 S3 S4 S5 S6 S7 S8 S9 S10 S11";
-
-
-var result1 = [];
-var yearresult = "";
-var branchresult = "";
-var divisionresult = "";
-var batchresult = "";
-var result2 = [];
-var result3 = [];
-var result4  =[];
-
-var finalresult = [];
-
- var year = {
-  1:/[A-D]\d*/g,
-  2:/[E-H]\d*/g,
-  3:/[K-N]\d*/g,
-  4:/[P-S]\d*/g
-};
-
-var branch = {
-  0:/\w[1-4]/g,
-  1:/\w(9|11|10)/g,
-  2:/\w[5-8]/g
-};
-
-
-var division = {
-  0:/\w[1]/g,
-  1:/\w[2]/g,
-  2:/\w[3]/g,
-  3:/\w[4]/g,
-  4:/\w[5]/g,
-  5:/\w[6]/g,
-  6:/\w[7]/g,
-  7:/\w[8]/g,
-  8:/\w[9]/g,
-  9:/\w10/g,
-  10:/\w11/g
-
-};
-
-var divisionCE = {
-  0:/\w[1]/g,
-  1:/\w[2]/g,
-  2:/\w[3]/g,
-  3:/\w[4]/g
-};
-var divisionIT = {
-  0:/\w[9]/g,
-  1:/\w10/g,
-  2:/\w11/g
-};
-var divisionETC = {
-  0:/\w[5]/g,
-  1:/\w[6]/g,
-  2:/\w[7]/g,
-  3:/\w[8]/g
-};
-
-
-
-if($('#year input:eq(0)').is(":checked")){
-    
-    return batches; 
-}else{
-  var k = 0;
-  for(var i=1; i<=4; i++){
-    if($('#year input:eq('+i+')').is(":checked")){
-        result1.push(batches.match(year[i]));
-        result1.push(result1[k].join(" "));
-        result1.splice(k,1);
-        k++;
-    }
-}
-yearresult = result1.join(" ");
-
-
- k=0;
-for(var i=0; i<=2; i++){
-    if($('#branch input:eq('+i+')').is(":checked")){
-        result2.push(yearresult.match(branch[i]));
-         result2.push(result2[k].join(" "));
-        result2.splice(k,1);
-        k++;
-    }
-}
-if(result2.length == 0){
-
-  if($('#year input:eq(1)').is(":checked")){
-
-
-
-
-    k=0;
-    for(var i=0; i<=10; i++){
-    if($('#division input:eq('+i+')').is(":checked")){
-        result3.push(yearresult.match(division[i]));
-         result3.push(result3[k].join(" "));
-        result3.splice(k,1);
-        k++;
-    }
-}                       
-  if(result3.length == 0){
-  
-      return yearresult;
-  }else{
-    divisionresult = result3.join(" ");
-    if(result3.length == 1){
-     
-      
-    for(var i=0; i<=3; i++){
-    if($('#batch input:eq('+i+')').is(":checked")){
-      result4.push($('#batch input:eq('+i+')')[0].nextElementSibling.dataset.labelOn + divisionresult.match(/\d+/)[0] );
-    }
-}   
-batchresult = result4.join(" ");
-if(result4.length == 0){
-  
-    return divisionresult;
-}else{
-
-return batchresult;
-}
-    }else{
-
-    
-      return divisionresult;
-
-    }
-
-
-  }
-
-
-  }
-
-
-  
-  return yearresult;
-
-
-
-
-
-
-
-
-}else{
-  branchresult = result2.join(" ");
-
-  if(result2.length==1){
-
-
-    if($('#branch input:eq(0)').is(":checked")){
-      k=0;
-    
-    for(var i=0; i<=3; i++){
-    if($('#division input:eq('+i+')').is(":checked")){
-        result3.push(branchresult.match(divisionCE[i]));
-      
-         result3.push(result3[k].join(" "));
-        result3.splice(k,1);
-        
-        k++;
-    }
-}
-
-
-if(result3.length == 0){
-  
-      return branchresult;
-  }else{
-    divisionresult = result3.join(" ");
-    if(result3.length == 1){
-    
-      
-    for(var i=0; i<=3; i++){
-    if($('#batch input:eq('+i+')').is(":checked")){
-      
-        result4.push($('#batch input:eq('+i+')')[0].nextElementSibling.dataset.labelOn + divisionresult.match(/\d+/)[0] ); ///
-    }
-}   
-batchresult = result4.join(" ");
-if(result4.length == 0){
-  
-    return divisionresult;
-}else{
-
-return batchresult;
-}
-
-    
-    }else{
-
-    
-      return divisionresult;
-
-    }
-
-
-  }
-
-
-
-
-
-
-
-
-    }
-
-
-    if($('#branch input:eq(1)').is(":checked")){
-      k=0;
-    for(var i=0; i<=2; i++){
-    if($('#division input:eq('+i+')').is(":checked")){
-        result3.push(branchresult.match(divisionIT[i]));
-         result3.push(result3[k].join(" "));
-        result3.splice(k,1);
-        k++;
-    }
-}
-
-if(result3.length == 0){
-      return branchresult;
-  }else{
-    divisionresult = result3.join(" ");
-    if(result3.length == 1){
-
-      
-    for(var i=0; i<=3; i++){
-    if($('#batch input:eq('+i+')').is(":checked")){
-      
-      result4.push($('#batch input:eq('+i+')')[0].nextElementSibling.dataset.labelOn + divisionresult.match(/\d+/)[0]);
-    }
-}   
-batchresult = result4.join(" ");
-if(result4.length == 0){
-  
-    return divisionresult;
-}else{
-return batchresult;
-}
-    }else{
-
-    
-      return divisionresult;
-
-    }
-  }
-    }
-    if($('#branch input:eq(2)').is(":checked")){
-      k=0;
-    for(var i=0; i<=3; i++){
-    if($('#division input:eq('+i+')').is(":checked")){
-        result3.push(branchresult.match(divisionETC[i]));
-         result3.push(result3[k].join(" "));
-        result3.splice(k,1);
-        k++;
-    }
-}
-
-if(result3.length == 0){
-
-      return branchresult;
-  }else{
-    divisionresult = result3.join(" ");
-    if(result3.length == 1){
-
-      
-    for(var i=0; i<=3; i++){
-    if($('#batch input:eq('+i+')').is(":checked")){
-    
-      result4.push($('#batch input:eq('+i+')')[0].nextElementSibling.dataset.labelOn + divisionresult.match(/\d+/)[0]);
-    }
-}   
-batchresult = result4.join(" ");
-if(result4.length == 0){
-  console.log(divisionresult)
-    return divisionresult;
-}else{
-  
-return batchresult;
-}
-
-    }else{
-
-      
-      return divisionresult;
-
-    }
-
-
-  }
-
-
-
-
-
-
-
-
-    }
-
-   
-  }else{
-  
-    return branchresult;
-
-  }
-
-
-
-}
-
-  
-
-}
-
-
-
-
-
-
-}
-    
-  </script>
-
-<script>
-
-	jQuery.postCORS = function(url, data) {
-  return $.ajax({
-    type: 'POST', 
-    xhr: function(){
-      var xhr = new window.XMLHttpRequest();
-
-xhr.upload.addEventListener("progress", function(evt) {
-  if (evt.lengthComputable) {
-    var percentComplete = evt.loaded / evt.total;
-    percentComplete = parseInt(percentComplete * 100) + '%';
-    $('#progressbar').width(percentComplete);
-    console.log(percentComplete);
-/*
-    if (percentComplete === 100) {
-
-    }
-*/
-  }
-}, false);
-
-return xhr;
-    },
-    url: url, 
-    data: data, 
-    cache:false,
-    dataType: 'json', 
-    contentType: false, 
-    processData:false,
-    beforeSend:function(){ 
-      $("#spinner").addClass('is-active');
-      $("#cancelajax").toggleClass('d-none');
-      $("#submit").toggleClass('d-none');
-    },
-    complete: function(){
-      $("#spinner").removeClass('is-active');
-      $("#cancelajax").toggleClass('d-none');
-      $('#progressbar').width('0%');
-      $("#submit").toggleClass('d-none');
-      
-    },
-    success: function() { Swal.fire(
-  'Sent',
-  '',
-  'success'
-)  }, 
-    error: function(data) { 
-      console.log(data)
-      Swal.fire(
-  'Something went Wrong',
-  '',
-  'error'
-)   
-    }
-  });
-}
-
-
-var ajaxrequest;
-
-$("#submit").on('click',function(e){
-  e.preventDefault();
-
-
-var scope = "";
-
-if($("a[href='#year']").hasClass('active')){
-  scope = "year";
-}else if($("a[href='#branch']").hasClass('active')){
-  scope = "branch";
-}else if($("a[href='#division']").hasClass('active')){
-  scope = "division";
-}else{
-  scope = "batch";
-}
-
-var result = compute().split(" ");
-var final_batch = [...new Set(result)];
-
-
-  var dataimg = new FormData();
-dataimg.append('title',$('#title').val());
-dataimg.append('nbody',$('#body').val());
-dataimg.append('tid',$('#tid').text());
-dataimg.append('tname', $('#tname').text());
-dataimg.append('validity',$('#validity').val());
-dataimg.append('scope',scope);
-dataimg.append('category',$('#category').val());
-dataimg.append('batches',JSON.stringify(final_batch));
-dataimg.append('noticefile',$('#filelink')[0].files[0]);
-console.log($('#filelink')[0].files[0]);
-
-
-
-
- ajaxrequest =  $.postCORS("https://damp-fjord-36039.herokuapp.com/bh/addnotice",dataimg);
-
-
-});
-
-
-
-function getone(){
-$('#totalnotices').empty();
-$(document).ready(function(){
-	
-	$.ajax({
-		type:'POST',
-		url : "https://damp-fjord-36039.herokuapp.com/bh/teacher",
-		data: {tid:$('#tid').text()},
-		success: function(result){
-		
-		
-		result.map((res)=>{
-				
-			$('#totalnotices').append(
-			  '<tr id="'+ res._id + res.category +'"'+' '+'>'+
-              '<th scope="row">'+
-                  
-                                         '<span class="name mb-0 text-sm">'+res.title+'</span>'+
-               '</th>'+
-              '<td class="budget">'+
-                res.category+
-              '</td>'+
-              '<td>'+
-                  
-                   ' <i class="ni ni-calendar-grid-58 "></i>'+
-                    '<span class="status">'+res.validity+'</span>'+
-                  
-              '</td>'+
-                '<td>'+
-                      '<a class="btn btn-sm btn-icon-only btn-danger" id="'+ res._id+'@'+res.category +'"'+' '+' '+ 'onclick="deletenotice(this)"' + 'role="button">'+
-                        '<i class="fa fa-window-close text-white"></i>'+
-                      '</a>'+
-                     
-                  
-              '</td>'+
-         ' </tr>'
-			);
-		});
-		}
-	});
-});
-}
-
-function deletenotice(data){
- var  str=data.attributes.id.value;
-
-  var regid = str.match(/[A-Za-z0-9]{24}/i);
-  var accesscode=str.match(/[@][0-9a-z]*/i).toString().substr(1);
-$.ajax({
-type:'DELETE',
-		url : "https://damp-fjord-36039.herokuapp.com/bh/teacher",
-		data: {id1:regid},
-		success: function(result){
-		
-var uid = '#'+regid+accesscode;
-    uid.toString();
-    $( uid ).remove();
-		}
-});
-
-
-
-}
-
-function cancel(){
-  ajaxrequest.abort();
-  $('#progressbar').width('0%');
-  $("#submit").removeClass('d-none');
-}
-
-
-
-
-</script>
-
-<script>
-
-      
-    var poolData = {
-          UserPoolId : _config.cognito.userPoolId, // Your user pool id here
-          ClientId : _config.cognito.clientId, // Your client id here
-      };
-    
-      var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
-    
-       var cognitoUser = userPool.getCurrentUser();
-
-     if (cognitoUser != null) {
-        cognitoUser.getSession(function(err, session) {
-            if (err) {
-                alert(err);
-                return;
+          for (var i = 0; i < length; i++) {
+            if ($("#year input")[i].checked == true) {
+              count++;
+              fields("branch", 0, 3, { disabled: false });
+              flag = false;
             }
-            console.log(session);
+          } if ($("#year input")[1].checked == true) {
+            fields("branch", 0, 3, { disabled: true });
+            fields("branch", 0, 3, { checked: false });
+            if (count > 1) {
+              fields("branch", 0, 3, { disabled: false });
+              event.stopImmediatePropagation();
+              $.notify({
+                icon: 'ni ni-bulb-61',
+                title: 'Not Allowed',
+                message: ""
+
+              }, {
+                  element: 'body',
+                  position: null,
+                  delay: 1000,
+                  animate: {
+                    enter: 'animated fadeInDown',
+                    exit: 'animated fadeOutUp'
+                  },
+                  placement: {
+                    from: "bottom",
+                    align: "right"
+                  },
+                  type: 'secondary'
+                });
+            }
+
+            return;
+          }
+          if (flag == true) {
+            event.stopImmediatePropagation();
+            $.notify({
+              icon: 'ni ni-bulb-61',
+              title: 'Not Allowed',
+              message: ""
+
+            }, {
+                element: 'body',
+                position: null,
+                delay: 1000,
+                animate: {
+                  enter: 'animated fadeInDown',
+                  exit: 'animated fadeOutUp'
+                },
+                placement: {
+                  from: "bottom",
+                  align: "right"
+                },
+                type: 'secondary'
+              });
+
+            return;
+          }
+        }
+
+        if ($("#branch").hasClass("active")) {
+
+          var length = $("#branch input").length;
+
+          var flag = true;
+          var temp;
+          var count = 0;
+          var countyear = 0;
+          for (var i = 0; i < length; i++) {
+            if ($("#branch input")[i].checked == true) {
+              flag = false;
+              temp = i;
+              count++;
+            }
+
+
+          }
+          for (var i = 0; i < 4; i++) {
+            if ($("#year input")[i].checked == true) {
+              countyear++;
+
+            }
+          }
+          if (countyear > 1) {
+            event.stopImmediatePropagation();
+            $.notify({
+              icon: 'ni ni-bulb-61',
+              title: 'Not Allowed',
+              message: ""
+
+            }, {
+                element: 'body',
+                position: null,
+                delay: 1000,
+                animate: {
+                  enter: 'animated fadeInDown',
+                  exit: 'animated fadeOutUp'
+                },
+                placement: {
+                  from: "bottom",
+                  align: "right"
+                },
+                type: 'secondary'
+              });
+            return;
+          } else if (countyear == 1 && $("#year input")[1].checked == true) {
+            opt("division", 1, 11);
+            return;
+          }
+          if (flag == true || count > 1) {
+            event.stopImmediatePropagation();
+            $.notify({
+              icon: 'ni ni-bulb-61',
+              title: 'Not Allowed',
+              message: ""
+
+            }, {
+                element: 'body',
+                position: null,
+                delay: 1000,
+                animate: {
+                  enter: 'animated fadeInDown',
+                  exit: 'animated fadeOutUp'
+                },
+                placement: {
+                  from: "bottom",
+                  align: "right"
+                },
+                type: 'secondary'
+              });
+
+            return;
+          } else {
+            switch (temp) {
+              case 0: opt("division", 1, 4);
+                break;
+              case 1: opt("division", 9, 11);
+                break;
+              case 2: opt("division", 5, 8);
+                break;
+
+            }
+          }
+        }
+
+
+
+        if ($("#division").hasClass("active")) {
+
+          var length = $("#division input").length;
+
+          var flag = true;
+          var count = 0;
+          var temp;
+          for (var i = 0; i < length; i++) {
+            if ($("#division input")[i].checked == true) {
+              flag = false;
+              temp = i;
+              count++;
+
+            }
+
+
+          }
+          for (var i = 1; i < 5; i++) {
+            if ($("#year input")[i].checked == true) {
+              temp = i;
+
+            }
+          }
+          if (flag == true || count > 1) {
+            event.stopImmediatePropagation();
+            $.notify({
+              icon: 'ni ni-bulb-61',
+              title: 'Not Allowed',
+              message: ""
+
+            }, {
+                element: 'body',
+                position: null,
+                delay: 1000,
+                animate: {
+                  enter: 'animated fadeInDown',
+                  exit: 'animated fadeOutUp'
+                },
+                placement: {
+                  from: "bottom",
+                  align: "right"
+                },
+                type: 'secondary'
+              });
+
+            return;
+          } else {
+            switch (temp) {
+
+              case 1: sopt("batch", 1);
+                break;
+              case 2: sopt("batch", 2);
+                break;
+              case 3: sopt("batch", 3);
+                break;
+              case 4: sopt("batch", 4);
+                break;
+
+            }
+          }
+        }
+
+
+
+
+
+
+
+
+      });
+
+      $("#year input:eq(0)").on('click', function (event) {
+
+        if ($("#year input:eq(0) ").is(":checked")) {
+          fields("year", 1, 5, { checked: false });
+          fields("year", 1, 5, { disabled: true });
+
+
+        } else {
+          fields("year", 1, 5, { disabled: false });
+
+        }
+      });
+
+
+
+    </script>
+
+
+
+    <script>
+
+      function compute() {
+
+        var batches = "A1 A2 A3 A4 A5 A6 A7 A8 A9 A10 A11 B1 B2 B3 B4 B5 B6 B7 B8 B9 B10 B11 C1 C2 C3 C4 C5 C6 C7 C8 C9 C10 C11 D1 D2 D3 D4 D5 D6 D7 D8 D9 D10 D11 E1 E2 E3 E4 E5 E6 E7 E8 E9 E10 E11 F1 F2 F3 F4 F5 F6 F7 F8 F9 F10 F11 G1 G2 G3 G4 G5 G6 G7 G8 G9 G10 G11 H1 H2 H3 H4 H5 H6 H7 H8 H9 H10 H11 K1 K2 K3 K4 K5 K6 K7 K8 K9 K10 K11 L1 L2 L3 L4 L5 L6 L7 L8 L9 L10 L11 M1 M2 M3 M4 M5 M6 M7 M8 M9 M10 M11 N1 N2 N3 N4 N5 N6 N7 N8 N9 N10 N11 P1 P2 P3 P4 P5 P6 P7 P8 P9 P10 P11 Q1 Q2 Q3 Q4 Q5 Q6 Q7 Q8 Q9 Q10 Q11 R1 R2 R3 R4 R5 R6 R7 R8 R9 R10 R11 S1 S2 S3 S4 S5 S6 S7 S8 S9 S10 S11";
+
+
+        var result1 = [];
+        var yearresult = "";
+        var branchresult = "";
+        var divisionresult = "";
+        var batchresult = "";
+        var result2 = [];
+        var result3 = [];
+        var result4 = [];
+
+        var finalresult = [];
+
+        var year = {
+          1: /[A-D]\d*/g,
+          2: /[E-H]\d*/g,
+          3: /[K-N]\d*/g,
+          4: /[P-S]\d*/g
+        };
+
+        var branch = {
+          0: /\w[1-4]/g,
+          1: /\w(9|11|10)/g,
+          2: /\w[5-8]/g
+        };
+
+
+        var division = {
+          0: /\w[1]/g,
+          1: /\w[2]/g,
+          2: /\w[3]/g,
+          3: /\w[4]/g,
+          4: /\w[5]/g,
+          5: /\w[6]/g,
+          6: /\w[7]/g,
+          7: /\w[8]/g,
+          8: /\w[9]/g,
+          9: /\w10/g,
+          10: /\w11/g
+
+        };
+
+        var divisionCE = {
+          0: /\w[1]/g,
+          1: /\w[2]/g,
+          2: /\w[3]/g,
+          3: /\w[4]/g
+        };
+        var divisionIT = {
+          0: /\w[9]/g,
+          1: /\w10/g,
+          2: /\w11/g
+        };
+        var divisionETC = {
+          0: /\w[5]/g,
+          1: /\w[6]/g,
+          2: /\w[7]/g,
+          3: /\w[8]/g
+        };
+
+
+
+        if ($('#year input:eq(0)').is(":checked")) {
+
+          return batches;
+        } else {
+          var k = 0;
+          for (var i = 1; i <= 4; i++) {
+            if ($('#year input:eq(' + i + ')').is(":checked")) {
+              result1.push(batches.match(year[i]));
+              result1.push(result1[k].join(" "));
+              result1.splice(k, 1);
+              k++;
+            }
+          }
+          yearresult = result1.join(" ");
+
+
+          k = 0;
+          for (var i = 0; i <= 2; i++) {
+            if ($('#branch input:eq(' + i + ')').is(":checked")) {
+              result2.push(yearresult.match(branch[i]));
+              result2.push(result2[k].join(" "));
+              result2.splice(k, 1);
+              k++;
+            }
+          }
+          if (result2.length == 0) {
+
+            if ($('#year input:eq(1)').is(":checked")) {
+
+
+
+
+              k = 0;
+              for (var i = 0; i <= 10; i++) {
+                if ($('#division input:eq(' + i + ')').is(":checked")) {
+                  result3.push(yearresult.match(division[i]));
+                  result3.push(result3[k].join(" "));
+                  result3.splice(k, 1);
+                  k++;
+                }
+              }
+              if (result3.length == 0) {
+
+                return yearresult;
+              } else {
+                divisionresult = result3.join(" ");
+                if (result3.length == 1) {
+
+
+                  for (var i = 0; i <= 3; i++) {
+                    if ($('#batch input:eq(' + i + ')').is(":checked")) {
+                      result4.push($('#batch input:eq(' + i + ')')[0].nextElementSibling.dataset.labelOn + divisionresult.match(/\d+/)[0]);
+                    }
+                  }
+                  batchresult = result4.join(" ");
+                  if (result4.length == 0) {
+
+                    return divisionresult;
+                  } else {
+
+                    return batchresult;
+                  }
+                } else {
+
+
+                  return divisionresult;
+
+                }
+
+
+              }
+
+
+            }
+
+
+
+            return yearresult;
+
+
+
+
+
+
+
+
+          } else {
+            branchresult = result2.join(" ");
+
+            if (result2.length == 1) {
+
+
+              if ($('#branch input:eq(0)').is(":checked")) {
+                k = 0;
+
+                for (var i = 0; i <= 3; i++) {
+                  if ($('#division input:eq(' + i + ')').is(":checked")) {
+                    result3.push(branchresult.match(divisionCE[i]));
+
+                    result3.push(result3[k].join(" "));
+                    result3.splice(k, 1);
+
+                    k++;
+                  }
+                }
+
+
+                if (result3.length == 0) {
+
+                  return branchresult;
+                } else {
+                  divisionresult = result3.join(" ");
+                  if (result3.length == 1) {
+
+
+                    for (var i = 0; i <= 3; i++) {
+                      if ($('#batch input:eq(' + i + ')').is(":checked")) {
+
+                        result4.push($('#batch input:eq(' + i + ')')[0].nextElementSibling.dataset.labelOn + divisionresult.match(/\d+/)[0]); ///
+                      }
+                    }
+                    batchresult = result4.join(" ");
+                    if (result4.length == 0) {
+
+                      return divisionresult;
+                    } else {
+
+                      return batchresult;
+                    }
+
+
+                  } else {
+
+
+                    return divisionresult;
+
+                  }
+
+
+                }
+
+
+
+
+
+
+
+
+              }
+
+
+              if ($('#branch input:eq(1)').is(":checked")) {
+                k = 0;
+                for (var i = 0; i <= 2; i++) {
+                  if ($('#division input:eq(' + i + ')').is(":checked")) {
+                    result3.push(branchresult.match(divisionIT[i]));
+                    result3.push(result3[k].join(" "));
+                    result3.splice(k, 1);
+                    k++;
+                  }
+                }
+
+                if (result3.length == 0) {
+                  return branchresult;
+                } else {
+                  divisionresult = result3.join(" ");
+                  if (result3.length == 1) {
+
+
+                    for (var i = 0; i <= 3; i++) {
+                      if ($('#batch input:eq(' + i + ')').is(":checked")) {
+
+                        result4.push($('#batch input:eq(' + i + ')')[0].nextElementSibling.dataset.labelOn + divisionresult.match(/\d+/)[0]);
+                      }
+                    }
+                    batchresult = result4.join(" ");
+                    if (result4.length == 0) {
+
+                      return divisionresult;
+                    } else {
+                      return batchresult;
+                    }
+                  } else {
+
+
+                    return divisionresult;
+
+                  }
+                }
+              }
+              if ($('#branch input:eq(2)').is(":checked")) {
+                k = 0;
+                for (var i = 0; i <= 3; i++) {
+                  if ($('#division input:eq(' + i + ')').is(":checked")) {
+                    result3.push(branchresult.match(divisionETC[i]));
+                    result3.push(result3[k].join(" "));
+                    result3.splice(k, 1);
+                    k++;
+                  }
+                }
+
+                if (result3.length == 0) {
+
+                  return branchresult;
+                } else {
+                  divisionresult = result3.join(" ");
+                  if (result3.length == 1) {
+
+
+                    for (var i = 0; i <= 3; i++) {
+                      if ($('#batch input:eq(' + i + ')').is(":checked")) {
+
+                        result4.push($('#batch input:eq(' + i + ')')[0].nextElementSibling.dataset.labelOn + divisionresult.match(/\d+/)[0]);
+                      }
+                    }
+                    batchresult = result4.join(" ");
+                    if (result4.length == 0) {
+                      console.log(divisionresult)
+                      return divisionresult;
+                    } else {
+
+                      return batchresult;
+                    }
+
+                  } else {
+
+
+                    return divisionresult;
+
+                  }
+
+
+                }
+
+
+
+
+
+
+
+
+              }
+
+
+            } else {
+
+              return branchresult;
+
+            }
+
+
+
+          }
+
+
+
+        }
+
+
+
+
+
+
+      }
+
+    </script>
+
+    <script>
+
+      jQuery.postCORS = function (url, data) {
+        return $.ajax({
+          type: 'POST',
+          xhr: function () {
+            var xhr = new window.XMLHttpRequest();
+
+            xhr.upload.addEventListener("progress", function (evt) {
+              if (evt.lengthComputable) {
+                var percentComplete = evt.loaded / evt.total;
+                percentComplete = parseInt(percentComplete * 100) + '%';
+                $('#progressbar').width(percentComplete);
+                console.log(percentComplete);
+                /*
+                    if (percentComplete === 100) {
+                
+                    }
+                */
+              }
+            }, false);
+
+            return xhr;
+          },
+          url: url,
+          data: data,
+          cache: false,
+          dataType: 'json',
+          contentType: false,
+          processData: false,
+          beforeSend: function () {
+            $("#spinner").addClass('is-active');
+            $("#cancelajax").toggleClass('d-none');
+            $("#submit").toggleClass('d-none');
+          },
+          complete: function () {
+            $("#spinner").removeClass('is-active');
+            $("#cancelajax").toggleClass('d-none');
+            $('#progressbar').width('0%');
+            $("#submit").toggleClass('d-none');
+
+          },
+          success: function () {
+            Swal.fire(
+              'Sent',
+              '',
+              'success'
+            )
+          },
+          error: function (data) {
+            console.log(data)
+            Swal.fire(
+              'Something went Wrong',
+              '',
+              'error'
+            )
+          }
         });
-    }
-</script>
+      }
+
+
+      var ajaxrequest;
+
+      $("#submit").on('click', function (e) {
+        e.preventDefault();
+
+
+        var scope = "";
+
+        if ($("a[href='#year']").hasClass('active')) {
+          scope = "year";
+        } else if ($("a[href='#branch']").hasClass('active')) {
+          scope = "branch";
+        } else if ($("a[href='#division']").hasClass('active')) {
+          scope = "division";
+        } else {
+          scope = "batch";
+        }
+
+        var result = compute().split(" ");
+        var final_batch = [...new Set(result)];
+
+
+        var dataimg = new FormData();
+        dataimg.append('title', $('#title').val());
+        dataimg.append('nbody', $('#body').val());
+        dataimg.append('tid', $('#tid').text());
+        dataimg.append('tname', $('#tname').text());
+        dataimg.append('validity', $('#validity').val());
+        dataimg.append('scope', scope);
+        dataimg.append('category', $('#category').val());
+        dataimg.append('batches', JSON.stringify(final_batch));
+        dataimg.append('noticefile', $('#filelink')[0].files[0]);
+        console.log($('#filelink')[0].files[0]);
+
+
+
+
+        ajaxrequest = $.postCORS("https://damp-fjord-36039.herokuapp.com/bh/addnotice", dataimg);
+
+
+      });
+
+
+
+      function getone() {
+        $('#totalnotices').empty();
+        $(document).ready(function () {
+
+          $.ajax({
+            type: 'POST',
+            url: window.location.host+"/bh/teacher",
+            data: { tid: $('#tid').text() },
+            success: function (result) {
+
+
+              result.map((res) => {
+
+                $('#totalnotices').append(
+                  '<tr id="' + res._id + res.category + '"' + ' ' + '>' +
+                  '<th scope="row">' +
+
+                  '<span class="name mb-0 text-sm">' + res.title + '</span>' +
+                  '</th>' +
+                  '<td class="budget">' +
+                  res.category +
+                  '</td>' +
+                  '<td>' +
+
+                  ' <i class="ni ni-calendar-grid-58 "></i>' +
+                  '<span class="status">' + res.validity + '</span>' +
+
+                  '</td>' +
+                  '<td>' +
+                  '<a class="btn btn-sm btn-icon-only btn-danger" id="' + res._id + '@' + res.category + '"' + ' ' + ' ' + 'onclick="deletenotice(this)"' + 'role="button">' +
+                  '<i class="fa fa-window-close text-white"></i>' +
+                  '</a>' +
+
+
+                  '</td>' +
+                  ' </tr>'
+                );
+              });
+            }
+          });
+        });
+      }
+
+      function deletenotice(data) {
+        var str = data.attributes.id.value;
+
+        var regid = str.match(/[A-Za-z0-9]{24}/i);
+        var accesscode = str.match(/[@][0-9a-z]*/i).toString().substr(1);
+        $.ajax({
+          type: 'DELETE',
+          url: window.location.host + "/bh/teacher",
+          data: { id1: regid },
+          success: function (result) {
+
+            var uid = '#' + regid + accesscode;
+            uid.toString();
+            $(uid).remove();
+          }
+        });
+
+
+
+      }
+
+      function cancel() {
+        ajaxrequest.abort();
+        $('#progressbar').width('0%');
+        $("#submit").removeClass('d-none');
+      }
+
+
+
+
+    </script>
+
+    <script>
+
+
+      var poolData = {
+        UserPoolId: _config.cognito.userPoolId, // Your user pool id here
+        ClientId: _config.cognito.clientId, // Your client id here
+      };
+
+      var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
+
+      var cognitoUser = userPool.getCurrentUser();
+      var actoken;
+      if (cognitoUser != null) {
+        cognitoUser.getSession(function (err, session) {
+          if (err) {
+            alert(err);
+            return;
+          }
+          cognitoUser.getUserAttributes(function (err, result) {
+            if (err) {
+              alert(err);
+              return;
+            }
+            $('#tname').text(result[2].getValue())
+            $('#tid').text(result[3].getValue())
+
+          });
+
+        });
+
+      }
+
+      function logout() {
+        
+        cognitoUser.signOut();
+        window.location.assign(window.location.host);
+      }
+
+
+    </script>
 
 </body>
+
 </html>
