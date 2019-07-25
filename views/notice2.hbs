@@ -244,7 +244,6 @@
 
 
   <script>
-  var urldefault = "bunksheet.ml";
     function signInButton() {
 
       var authenticationData = {
@@ -272,7 +271,7 @@
         onSuccess: function (result) {
           var accessToken = result.getAccessToken().getJwtToken();
           console.log(result);
-          window.location.assign(urldefault+"/notice")
+          window.location.assign("/notice")
         },
 
         onFailure: function (err) {
@@ -432,7 +431,7 @@
       console.log(password);
       $.ajax({
         type: 'POST',
-        url:urldefault+"/cc/masterPassword",
+        url: "/cc/masterPassword",
         data: { password: password },
         success: function (result) {
           console.log(result);
