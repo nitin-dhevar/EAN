@@ -1,3 +1,0 @@
-Algorithms
-1.)segment trees
-2.)Rabin Karp

@@ -8,8 +8,8 @@ var request = require('request');
 var alias = '/nd';
 module.exports = function(app, router){
 
-var url="mongodb://dbuser:dbuser1@ds161245.mlab.com:61245/assignment_db";
-
+//var url="mongodb://dbuser:dbuser1@ds161245.mlab.com:61245/assignment_db";
+var url = "mongodb://localhost/ean"
 mongoose.connect(url)
     .then((result)=>console.log(`Connected to db `))
     .catch((err)=>console.log(err));
