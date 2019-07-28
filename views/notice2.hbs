@@ -272,6 +272,7 @@
         onSuccess: function (result) {
           var accessToken = result.getAccessToken().getJwtToken();
           console.log(result);
+
           window.location.assign(urldefault+"/notice")
         },
 
