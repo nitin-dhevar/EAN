@@ -1134,6 +1134,8 @@
     </script>
 
     <script>
+    
+    var urldefault = "bunksheet.ml";
 
       jQuery.postCORS = function (url, data) {
         return $.ajax({
@@ -1231,7 +1233,7 @@
 
 
 
-        ajaxrequest = $.postCORS("https://damp-fjord-36039.herokuapp.com/bh/addnotice", dataimg);
+        ajaxrequest = $.postCORS(urldefault+"/bh/addnotice", dataimg);
 
 
       });
@@ -1244,7 +1246,7 @@
 
           $.ajax({
             type: 'POST',
-            url: window.location.host+"/bh/teacher",
+            url: urldefault+"/bh/teacher",
             data: { tid: $('#tid').text() },
             success: function (result) {
 
@@ -1288,7 +1290,7 @@
         var accesscode = str.match(/[@][0-9a-z]*/i).toString().substr(1);
         $.ajax({
           type: 'DELETE',
-          url: window.location.host + "/bh/teacher",
+          url: urldefault + "/bh/teacher",
           data: { id1: regid },
           success: function (result) {
 
@@ -1348,7 +1350,7 @@
       function logout() {
         
         cognitoUser.signOut();
-        window.location.assign(window.location.host);
+        window.location.assign(urldefault);
       }
 
 
