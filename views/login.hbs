@@ -1233,7 +1233,7 @@
 
 
 
-        ajaxrequest = $.postCORS(urldefault+"/bh/addnotice", dataimg);
+        ajaxrequest = $.postCORS("/bh/addnotice", dataimg);
 
 
       });
@@ -1246,7 +1246,7 @@
 
           $.ajax({
             type: 'POST',
-            url: urldefault+"/bh/teacher",
+            url: "/bh/teacher",
             data: { tid: $('#tid').text() },
             success: function (result) {
 
@@ -1290,7 +1290,7 @@
         var accesscode = str.match(/[@][0-9a-z]*/i).toString().substr(1);
         $.ajax({
           type: 'DELETE',
-          url: urldefault + "/bh/teacher",
+          url: "/bh/teacher",
           data: { id1: regid },
           success: function (result) {
 
