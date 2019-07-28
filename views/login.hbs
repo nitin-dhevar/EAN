@@ -69,7 +69,7 @@
 
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#noticepanel" role="tab" aria-selected="false">
+            <a class="nav-link" data-toggle="tab" href="#noticepanel" id="noticeprev" role="tab" aria-selected="false">
               <i class="ni ni-shop text-warning"></i>
               <span class="nav-link-text">Notice</span>
             </a>
@@ -1369,6 +1369,13 @@
         window.location.assign("/");
       }
 
+      $(document).ready(function(){
+  $("#noticeprev").click(function(){
+  	getone();
+  })
+});
+
+      $("#noticeprev").click()
 
     </script>
 
