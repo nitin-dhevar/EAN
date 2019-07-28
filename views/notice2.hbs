@@ -355,7 +355,8 @@
           return;
         }
         cognitoUser = result.user;
-        alert('Registered');
+        alert("User Registered. Press OK to move to verify tab ");
+        $("#tabs-icons-text-3-tab").click();
         console.log('user name is ' + cognitoUser.getUsername());
 
       });
@@ -391,7 +392,9 @@
           alert(JSON.stringify(err));
           return;
         }
-        alert(result);
+         alert(result);
+         $("#tabs-icons-text-3-tab").click();
+       
       });
     }
 
