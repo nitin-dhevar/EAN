@@ -25,8 +25,9 @@ const storage = multer.diskStorage({
 
     }
 });
-
-var upload = multer({storage:storage});
+var maxSize = 1024*1024*1024;
+var upload = multer({storage:storage,  fileSize: 15 * 1024 * 1024,  // 5 MB upload limit
+        files: 1   });
 //****************************************************************************************************************************************** */
 function validate(req){
     var data=_.pick(req.body,['title','nbody','tname','tid','validity','scope','category']);

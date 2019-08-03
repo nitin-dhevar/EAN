@@ -67,4 +67,4 @@ router.get("/check", (req,res) => {
 
 
 app.use('/', router);
-server.listen(port);
+server.listen(port, 'localhost');
