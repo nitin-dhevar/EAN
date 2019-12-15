@@ -13,7 +13,7 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     }
   },
-  "host": "damp-fjord-36039.herokuapp.com",
+  "host": "bunksheet.ml",
   "basePath": "/cc",
   "tags": [
     {
@@ -83,6 +83,35 @@
           },
           "401": {
             "description": "Invalid Credentials"
+          }
+        }
+      }
+    },
+    "/getEmail": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "id",
+            "description": "ID given",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "summary": "Get Email From ID",
+        "description": "Get Email From ID",
+        "responses": {
+          "200": {
+            "description": "OK"
           }
         }
       }
