@@ -177,6 +177,14 @@ mongoose.connect(url)
              getUsers();
          
          });
+    app.delete(alias + '/deleteStudent', (req, res) => {
+            var tempregId=req.body.regId;
+            async function getUsers(tempregId){
+               await User.deleteOne({reqId: tempregId }, function (err, data) {})
+            } 
+            getUsers(tempregId);
+            res.json("Deleted!");
+});
     
      app.get(alias + '/getAllStudents', (req, res) => {
          
