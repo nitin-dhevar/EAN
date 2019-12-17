@@ -451,10 +451,10 @@
         success: function (result) {
           console.log(result);
           $("#create_account").attr("disabled", false);
-          $("#register_email").val(result.email);
+          $("#register_email").val(result.responseJSON.email);
         },
         error: function (result) {
-          console.log(result);
+          alert(result.responseJSON.message);
         }
       });
     }
